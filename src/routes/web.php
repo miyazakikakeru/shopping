@@ -18,3 +18,5 @@ use App\Http\Controllers\ConrtactController;
 Route::get('/', [ConrtactController::class, 'index']);
 Route::post('/', [ConrtactController::class, 'check']);
 Route::post('/comp', [ConrtactController::class, 'comp']);
+Route::get('/', [ConrtactController::class, 'index']);
+Route::post('/', [ConrtactController::class, 'check']);
