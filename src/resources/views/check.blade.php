@@ -14,59 +14,26 @@
     </head>
     <body>
         <article class="container">
-        <h1>お問い合わせフォーム(確認フォーム)</h1>
+        <h1>ログイン確認</h1>
         <div class="row">
             <div class="col">
-        <form action="/comp" method="post">
+        <form action="/home" method="post">
             @csrf
             <div class="row">
-                <label class="col-2 col-form-label" for="name">氏名<span class="badge bg-danger">必須</span></label>
+                <label class="col-2 col-form-label" for="id">ID<span class="badge bg-danger">必須</span></label>
                 <div class="col-10">
-                    {{ $name }}
-                    <input type="hidden" class="form-control" readonly  id="name" name="name" value ="{{ $name }}">
+                    {{ $id }}
+                    <input type="hidden" class="form-control" readonly  id="id" name="id" value ="{{ $id }}">
                 </div>
             </div>
 
             <div class="row">
-                <label class="col-2 col-form-label" for="name_kana">氏名（カナ）</label>
+                <label class="col-2 col-form-label" for="password">パスワード</label>
                 <div class="col-10">
-                    {{ $name_kana }}
-                    <input type="hidden" class="form-control" readonly  id="name_kana" name="name_kana" value ="{{ $name_kana }}">
+                    {{ $password }}
+                    <input type="hidden" class="form-control" readonly  id="password" name="password" value ="{{ $password }}">
                 </div>
             </div>
-            
-            <div class="row">
-             <label class="col-2 col-form-label" for="mail">メールアドレス<span class="badge bg-danger">必須</span></label>
-             <div class="col-10">
-                 {{ $mail }}
-                 <input type="hidden" class="form-control" readonly  id="mail" name="mail" value ="{{ $mail }}">
-             </div>
-            </div>
-
-            <div class="row">
-             <label class="col-2 col-form-label" for="mail_confirmation">メールアドレス確認用<span class="badge bg-danger">必須</span></label>
-             <div class="col-10">
-                {{ $mail_confirmation }}
-                <input type="hidden" class="form-control" readonly  id="mail_confirmation" name="mail_confirmation" value ="{{ $mail_confirmation }}">
-             </div>
-            </div>
-
-            <div class="row">
-             <label class="col-2 col-form-label" for="banngou">電話番号</label>
-             <div class="col-10">
-                {{ $banngou }}
-                <input type="hidden" class="form-control" readonly  id="banngou " name="banngou " value ="{{ $banngou }}">
-             </div>
-            </div>
-            
-            <div class="row">
-                  <label class="col-2 col-form-label" for="naiyou">お問い合わせ内容<span class="badge bg-danger">必須</span></label>
-                  <div class="col-10">
-                     {{ $naiyou }}
-                     <input type="hidden" class="form-control" readonly  id="naiyou" name="naiyou" value ="{{ $naiyou }}">
-                  </div>
-                </div>
-                
                 <button type="submit" class="btn btn-primary">送信</button>
             </form>
             <form method="GET" action="/">
