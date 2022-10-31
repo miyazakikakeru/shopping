@@ -15,7 +15,7 @@ use App\Http\Controllers\ConrtactController;
 |
 */
 
-Route::get('/', [ConrtactController::class, 'admin']);
+Route::get('/', [ConrtactController::class, 'adminlogin']);
 Route::post('/', [ConrtactController::class, 'admincheck']);
 Route::post('/home', [ConrtactController::class, 'adminhome']); 
 
