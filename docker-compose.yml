@@ -3,7 +3,7 @@ version: "3"
 services:  
     # nginx
     nginx:
-        container_name: ${PROJECT_NAME}_nginx
+        container_name: Shopping_nginx
         build: ./docker-assets/nginx
         volumes:
             - ./src:/src
@@ -16,7 +16,7 @@ services:
        
     # php
     php-fpm:
-        container_name: ${PROJECT_NAME}_php-fpm
+        container_name: Shopping_php-fpm
         build: ./docker-assets/php
         links:
             - mysql
@@ -28,7 +28,7 @@ services:
         
     # database
     mysql:
-        container_name: ${PROJECT_NAME}_mysql
+        container_name: Shopping_mysql
         image: mysql
         volumes: 
             - ./database:/var/lib/mysql
@@ -44,7 +44,7 @@ services:
             
     # adminer      
     adminer:
-        container_name: ${PROJECT_NAME}_adminer
+        container_name: Shopping_adminer
         image: adminer
         restart: always
         links:
@@ -57,12 +57,12 @@ services:
 
     # redis
     redis:
-        container_name: ${PROJECT_NAME}_redis
+        container_name: Shopping_redis
         image: redis:alpine
      
     # redis commander 
     redis-commander:
-        container_name: ${PROJECT_NAME}_redis_commander
+        container_name: Shopping_redis_commander
         hostname: redis-commander
         image: rediscommander/redis-commander:latest
         restart: always
@@ -76,7 +76,7 @@ services:
 
     # mailhog       
     mailhog:
-        container_name: ${PROJECT_NAME}_mailhog
+        container_name: Shopping_mailhog
         image: mailhog/mailhog
         ports: 
             - 1025:1025
