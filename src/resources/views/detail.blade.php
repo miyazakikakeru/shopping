@@ -16,10 +16,10 @@
 </head>
 <body>
     <article class="container">
-    <h1>商品ホーム</h1>
+    <h1>商品詳細ページ</h1>
     <div class="row">
         <div class="col">
-    <form action="/home/search" method="post">
+    <form action="/home/search/detail" method="post">
         
             <button type="submit" class="btn btn-primary">検索</button>
         </form>

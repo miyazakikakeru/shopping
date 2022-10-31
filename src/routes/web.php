@@ -19,5 +19,5 @@ Route::get('/', [ConrtactController::class, 'index']);
 Route::post('/', [ConrtactController::class, 'check']);
 Route::post('/home', [ConrtactController::class, 'home']); 
 Route::post('/home/search', [ConrtactController::class, 'search']);
-Route::post('/home/detail', [ConrtactController::class, 'detail']);//詳細
+Route::post('/home/search/detail', [ConrtactController::class, 'detail']);//詳細
 
