@@ -27,9 +27,9 @@
             </div>
 
             <div class="row">
-                <label class="col-2 col-form-label" for="password">パスワード</label>
+                <label class="col-2 col-form-label" for="password">パスワード<span class="badge bg-danger">必須</label>
                 <div class="col-10">
-                    <input type="text" name="password" id="password" class="form-control" p>
+                    <input type="text" name="password" id="password" class="form-control" placeholder="password" >
                 </div>
             </div>
             
