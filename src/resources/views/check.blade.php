@@ -14,26 +14,30 @@
     </head>
     <body>
         <article class="container">
-        <h1>ログイン</h1>
+        <h1>ログイン確認</h1>
         <div class="row">
             <div class="col">
-        <form action="/" method="post">
+        <form action="/home" method="post">
             @csrf
             <div class="row">
                 <label class="col-2 col-form-label" for="id">ID<span class="badge bg-danger">必須</span></label>
                 <div class="col-10">
-                    <input type="text" name="id" id="id" class="form-control" placeholder="id" >
+                    {{ $id }}
+                    <input type="hidden" class="form-control" readonly  id="id" name="id" value ="{{ $id }}">
                 </div>
             </div>
 
             <div class="row">
                 <label class="col-2 col-form-label" for="password">パスワード</label>
                 <div class="col-10">
-                    <input type="text" name="password" id="password" class="form-control" p>
+                    {{ $password }}
+                    <input type="hidden" class="form-control" readonly  id="password" name="password" value ="{{ $password }}">
                 </div>
             </div>
-            
-              <button type="submit" class="btn btn-primary">アクセス</button>
+                <button type="submit" class="btn btn-primary">送信</button>
+            </form>
+            <form method="GET" action="/">
+                 <button type= "submit" class="btn btn-primary">戻る</button>
             </form>
     </body>
 </html>

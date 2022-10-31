@@ -14,12 +14,21 @@
     <!-- Styles -->
 
 </head>
-
 <body>
-    <p>
-        送信完了
-    </p>
-    
-</body>
+    <article class="container">
+    <h1>ログイン確認</h1>
+    <div class="row">
+        <div class="col">
+    <form action="/home/search" method="post">
+        
+            <button type="submit" class="btn btn-primary">送信</button>
+        </form>
 
-</html>
+        <form action="/home/detail" method="post">
+            
+                <button type="submit" class="btn btn-primary">送信</button>
+            </form>
+        <form method="GET" action="/">
+             <button type= "submit" class="btn btn-primary">戻る</button>
+        </form>
+</body>
