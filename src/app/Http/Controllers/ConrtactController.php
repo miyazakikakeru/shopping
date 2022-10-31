@@ -20,4 +20,12 @@ class ConrtactController extends Controller
         $inputs = $request->all();
         return view('home',$inputs);
     }
+    public function search(Request $request){
+        $inputs = $request->all();
+        return view('search',$inputs);
+    }
+    public function detail(Request $request){
+        $inputs = $request->all();
+        return view('detail',$inputs);
+    }
 }
