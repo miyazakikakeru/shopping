@@ -22,14 +22,14 @@
             <div class="row">
                 <label class="col-2 col-form-label" for="id">ID<span class="badge bg-danger">必須</span></label>
                 <div class="col-10">
-                    <input type="text" name="id" id="id" class="form-control" placeholder="id" >
+                    <input type="text" name="id" id="id" class="form-control" placeholder="id" required >
                 </div>
             </div>
 
             <div class="row">
-                <label class="col-2 col-form-label" for="password">パスワード<span class="badge bg-danger">必須</label>
+                <label class="col-2 col-form-label" for="password">パスワード<span class="badge bg-danger" >必須</label>
                 <div class="col-10">
-                    <input type="text" name="password" id="password" class="form-control" placeholder="password" >
+                    <input type="text" name="password" id="password" class="form-control" placeholder="password" required>
                 </div>
             </div>
             

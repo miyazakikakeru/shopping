@@ -28,7 +28,7 @@
             </div>
 
             <div class="row">
-                <label class="col-2 col-form-label" for="password">パスワード</label>
+                <label class="col-2 col-form-label" for="password">パスワード<span class="badge bg-danger">必須</span></label>
                 <div class="col-10">
                     {{ $password }}
                     <input type="hidden" class="form-control" readonly  id="password" name="password" value ="{{ $password }}">
