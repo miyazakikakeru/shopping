@@ -21,3 +21,8 @@ Route::post('/home', [ConrtactController::class, 'home']);
 Route::post('/home/search', [ConrtactController::class, 'search']);
 Route::post('/home/search/detail', [ConrtactController::class, 'detail']);//詳細
 
+//admin
+Route::get('/admin', [ConrtactController::class, 'adminlogin']);
+Route::post('/admin', [ConrtactController::class, 'admincheck']);
+Route::post('/admin/home', [ConrtactController::class, 'adminhome']); 
+
