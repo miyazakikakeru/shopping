@@ -19,7 +19,7 @@
     <h1>商品ホーム</h1>
     <div class="row">
         <div class="col">
-    <form action="/search" method="post">
+    <form action="/home/search" method="post">
         @csrf
             <button type="submit" class="btn btn-primary">検索</button>
     </form>
