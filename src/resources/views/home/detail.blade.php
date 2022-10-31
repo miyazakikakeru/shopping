@@ -19,9 +19,10 @@
     <h1>商品詳細ページ</h1>
     <div class="row">
         <div class="col">
-    <form action="/home/search/detail" method="post">
+    <form action="/home" method="post">
+        @csrf
         
-            <button type="submit" class="btn btn-primary">検索</button>
+            <button type="submit" class="btn btn-primary">リセット</button>
         </form>
 
 </body>
