@@ -33,7 +33,7 @@
         <form action="insert" method="post">
             @csrf
             <label>商品名　</label></br>
-            <input type="text" class="form-control" name="name"></br>
+            <input type="text" name="name"></br>
             <label>商品情報</label></br>
             <textarea name="explanation"></textarea></br>
             <input type="submit" value="商品登録">
