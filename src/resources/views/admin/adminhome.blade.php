@@ -14,6 +14,27 @@
     </head>
     <body>
         <h1>管理者画面</h1>
-        <p>商品の登録・削除画面</p>
+        <h2>登録商品一覧</h2>
+        <table>
+            <tr>
+                <th>商品id</th><th>商品名</th><th>商品説明</th>
+            </tr>
+        @foreach ($items as $item)
+            <tr>
+                <th>{{$item->id}}</th>
+                <th>{{$item->name}}</th>
+                <th>{{$item->explanation}}</th>
+            </tr>
+        @endforeach
+        </table>
+        <h2>商品の登録</h2>
+        <form action="insert" method="post">
+            @csrf
+            <label>商品名　</label></br>
+            <input type="text" name="name"></br>
+            <label>商品情報</label></br>
+            <textarea name="explanation"></textarea></br>
+            <input type="submit" value="商品登録">
+        </form>
     </body>
 </html>

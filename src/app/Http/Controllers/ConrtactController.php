@@ -34,8 +34,23 @@ class ConrtactController extends Controller
         return view('admin.adminlogin',$inputs);
     }
 
-    public function admincheck(Request $request){
+    public function adminhome(Request $request){
         $inputs = $request->all();
-        return view('admin.adminhome',$inputs);
+        $items = DB::table('product')->get();
+        return view('admin.adminhome',['inputs'=>$inputs,'items'=>$items]);
     }
+
+    public function productInsert(Request $request){
+        $inputs = $request->all();
+        $param=[
+            'id'=> $request->id,
+            'name'=> $request->name,
+            'explanation' => $request->explanation,
+        ];
+        DB::table('product')->insert($param);
+        $tmp = $this->adminhome($request);
+        return $tmp;
+    }
+
+
 }
