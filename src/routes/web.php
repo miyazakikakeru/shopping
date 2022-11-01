@@ -24,3 +24,4 @@ Route::post('/home/search/detail', [ConrtactController::class, 'detail']);//è©³ç
 Route::get('/admin', [ConrtactController::class, 'adminlogin']);
 Route::post('/admin/home', [ConrtactController::class, 'adminhome']);
 Route::post('/admin/insert', [ConrtactController::class, 'productInsert']);
+Route::post('/admin/delete', [ConrtactController::class, 'productDelete']);

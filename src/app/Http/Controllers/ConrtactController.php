@@ -52,5 +52,13 @@ class ConrtactController extends Controller
         return $tmp;
     }
 
+    public function productDelete(Request $request){
+        $inputs = $request->all();
+        DB::table('product')->where('name',$request->deleteName)->where('id',$request->deleteId)->delete();
+        $tmp = $this->adminhome($request);
+        return $tmp;
+    }
+
+
 
 }

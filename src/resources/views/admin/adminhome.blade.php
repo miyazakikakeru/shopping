@@ -15,26 +15,38 @@
     <body>
         <h1>管理者画面</h1>
         <h2>登録商品一覧</h2>
-        <table>
-            <tr>
+        <table class="table">
+            <thead>
                 <th>商品id</th><th>商品名</th><th>商品説明</th>
-            </tr>
+            </thead>
         @foreach ($items as $item)
-            <tr>
-                <th>{{$item->id}}</th>
-                <th>{{$item->name}}</th>
-                <th>{{$item->explanation}}</th>
-            </tr>
+            <tbody>
+                <tr>
+                    <th>{{$item->id}}</th>
+                    <th>{{$item->name}}</th>
+                    <th>{{$item->explanation}}</th>
+                </tr>
+            </tbody>
         @endforeach
         </table>
         <h2>商品の登録</h2>
         <form action="insert" method="post">
             @csrf
             <label>商品名　</label></br>
-            <input type="text" name="name"></br>
+            <input type="text" class="form-control" name="name"></br>
             <label>商品情報</label></br>
             <textarea name="explanation"></textarea></br>
             <input type="submit" value="商品登録">
+        </form>
+        <h2>商品の削除</h2>
+        <form action="delete" method="post">
+            @csrf
+            <label>商品ID</label></br>
+            <input type="text" name="deleteId"></br></br>
+            <label>商品名　</label></br>
+            <input type="text" name="deleteName"></br>
+            <input type="submit" value="商品削除">
+
         </form>
     </body>
 </html>
