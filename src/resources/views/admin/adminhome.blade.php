@@ -1,4 +1,5 @@
 @extends('admin.adminLayouts.layout')
+@section('1','active')
 @section('content')
 <h2>登録商品一覧</h2>
     <table class="table">

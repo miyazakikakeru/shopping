@@ -1,4 +1,5 @@
 @extends('admin.adminLayouts.layout')
+@section('2','active')
 @section('content')
     <h2>商品の登録</h2>
     <form action="in" method="post">

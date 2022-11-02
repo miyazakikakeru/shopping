@@ -1,4 +1,5 @@
 @extends('admin.adminLayouts.layout')
+@section('3','active')
 @section('content')
     <h2>商品の削除</h2>
     <form action="del" method="post">
