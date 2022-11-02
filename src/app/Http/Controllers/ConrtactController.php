@@ -35,30 +35,33 @@ class ConrtactController extends Controller
     }
 
     public function adminhome(Request $request){
-        $inputs = $request->all();
         $items = DB::table('product')->get();
-        return view('admin.adminhome',['inputs'=>$inputs,'items'=>$items]);
+        return view('admin.adminhome',['items'=>$items]);
     }
 
     public function productInsert(Request $request){
-        $inputs = $request->all();
         $param=[
             'id'=> $request->id,
             'name'=> $request->name,
             'explanation' => $request->explanation,
+            'price' => $request->price,
         ];
         DB::table('product')->insert($param);
-        $tmp = $this->adminhome($request);
-        return $tmp;
+        $items = DB::table('product')->get();
+        return view('admin.adminhome',['items'=>$items]);
     }
 
     public function productDelete(Request $request){
-        $inputs = $request->all();
         DB::table('product')->where('name',$request->deleteName)->where('id',$request->deleteId)->delete();
-        $tmp = $this->adminhome($request);
-        return $tmp;
+        $items = DB::table('product')->get();
+        return view('admin.adminhome',['items'=>$items]);
     }
 
+    public function adminInsert(Request $request){
+        return view('admin.insert');
+    }
 
-
+    public function adminDelete(Request $request){
+        return view('admin.delete');
+    }
 }
