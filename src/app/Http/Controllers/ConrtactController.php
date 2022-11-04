@@ -26,6 +26,10 @@ class ConrtactController extends Controller
         $inputs = $request->all();
         return view('home/detail',$inputs);
     }
+    public function confirm(Request $request){
+        $inputs = $request->all();
+        return view('home/confirm',$inputs);
+    }
     public function adminlogin(Request $request){
         $inputs = $request->all();
         return view('admin.adminlogin',$inputs);

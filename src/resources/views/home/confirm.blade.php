@@ -16,12 +16,13 @@
 </head>
 <body>
     <article class="container">
-    <h1>商品検索後ページ</h1>
-    <div class="row">
-        <div class="col">
-    <form action="/home/search/detail" method="post">
-        @csrf
-            <button type="submit" class="btn btn-primary">詳細</button>
+    
+        
+        <p>購入確定</p>
+        <form action="/home/" method="post">
+            @csrf
+        <button class="btn btn-primary">ホームへ</button>
     </form>
+
 
 </body>

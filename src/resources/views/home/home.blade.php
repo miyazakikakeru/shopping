@@ -38,9 +38,9 @@
                 <div class="card-body">
                   <p class="card-title">{{$item->name}}</p>
                   <p class="card-text">{{$item->explanation}}</p>
+                  <p class="card-text">{{$item->gender}}</p>
+                  <p class="card-text">{{$item->condition}}</p>
                   <p class="card-text">¥{{$item->price}}</p>
-                  <p class="card-text">¥{{$item->gender}}</p>
-                  <p class="card-text">¥{{$item->condition}}</p>
                   <button class="btn btn-primary">購入</button>
                 </div>
               </div>

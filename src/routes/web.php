@@ -19,6 +19,7 @@ Route::get('/', [ConrtactController::class, 'index']);
 Route::post('/', [ConrtactController::class, 'check']);
 Route::post('/home', [ConrtactController::class, 'home']); 
 Route::post('/home/detail', [ConrtactController::class, 'detail']);//詳細
+Route::post('/home/confirm', [ConrtactController::class, 'confirm']);
 
 Route::get('/admin', [ConrtactController::class, 'adminlogin']);
 Route::post('/admin/home', [ConrtactController::class, 'adminhome']);

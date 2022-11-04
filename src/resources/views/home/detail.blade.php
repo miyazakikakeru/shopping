@@ -27,9 +27,11 @@
     <h1>商品詳細ページ</h1>
     <h2>{{$name}}</h2>
     <p class="p1">{{$explanation}}</p>
-    <p class="p2">{{$price}}</p>
     <p class="p3">{{$gender}}</p>
     <p class="p4">{{$condition}}</p>
-
-
+     <p class="p2">¥{{$price}}</p>
+    <form action="/home/confirm" method="post">
+        @csrf
+         <button class="btn btn-primary">購入</button>
+        </form>
 </body>
