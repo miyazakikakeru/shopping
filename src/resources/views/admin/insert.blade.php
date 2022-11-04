@@ -19,6 +19,5 @@
         <input type="radio" name="condition" value="新品">新品</label>
         <input type="radio" name="condition" value="中古品">中古品</label></br>
         <input type="submit" value="商品登録">
-
     </form>
 @endsection
