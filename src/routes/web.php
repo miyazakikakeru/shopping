@@ -22,6 +22,10 @@ Route::post('/home/search', [ConrtactController::class, 'search']);
 Route::post('/home/search/detail', [ConrtactController::class, 'detail']);//詳細
 
 Route::get('/admin', [ConrtactController::class, 'adminlogin']);
-Route::post('/admin', [ConrtactController::class, 'admincheck']);
-Route::post('/admin/home', [ConrtactController::class, 'adminhome']); 
+Route::post('/admin/home', [ConrtactController::class, 'adminhome']);
+Route::get('/admin/home', [ConrtactController::class, 'adminhome']);
+Route::post('/admin/in', [ConrtactController::class, 'productInsert']);
+Route::post('/admin/del', [ConrtactController::class, 'productDelete']);
+Route::get('/admin/insert', [ConrtactController::class, 'adminInsert']);
+Route::get('/admin/delete', [ConrtactController::class, 'adminDelete']);
 
