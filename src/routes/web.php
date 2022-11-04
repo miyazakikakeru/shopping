@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ConrtactController;
+use App\Http\Controllers\AdminController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,11 +23,11 @@ Route::post('/home', [ConrtactController::class, 'home']);
 Route::post('/home/detail', [ConrtactController::class, 'detail']);//詳細
 Route::post('/home/confirm', [ConrtactController::class, 'confirm']);
 
-Route::get('/admin', [ConrtactController::class, 'adminlogin']);
-Route::post('/admin/home', [ConrtactController::class, 'adminhome']);
-Route::get('/admin/home', [ConrtactController::class, 'adminhome']);
-Route::post('/admin/in', [ConrtactController::class, 'productInsert']);
-Route::post('/admin/del', [ConrtactController::class, 'productDelete']);
-Route::get('/admin/insert', [ConrtactController::class, 'adminInsert']);
-Route::get('/admin/delete', [ConrtactController::class, 'adminDelete']);
+Route::get('/admin', [AdminController::class, 'adminlogin']);
+Route::post('/admin/home', [AdminController::class, 'adminhome']);
+Route::get('/admin/home', [AdminController::class, 'adminhome']);
+Route::post('/admin/in', [AdminController::class, 'productInsert']);
+Route::post('/admin/del', [AdminController::class, 'productDelete']);
+Route::get('/admin/insert', [AdminController::class, 'adminInsert']);
+Route::get('/admin/delete', [AdminController::class, 'adminDelete']);
 
