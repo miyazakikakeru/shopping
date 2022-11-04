@@ -42,6 +42,8 @@ class ConrtactController extends Controller
             'name'=> $request->name,
             'explanation' => $request->explanation,
             'price' => $request->price,
+            'gender' => $request->gender,
+            'condition' => $request->condition,
         ];
         DB::table('product')->insert($param);
         $items = DB::table('product')->get();
