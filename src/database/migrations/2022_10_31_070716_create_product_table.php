@@ -19,6 +19,8 @@ return new class extends Migration
             $table->text('explanation');
             $table->integer('price');
             $table->timestamps();
+            $table->string('gender');
+            $table->string('condition');
         });
     }
 

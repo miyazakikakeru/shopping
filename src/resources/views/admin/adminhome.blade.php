@@ -4,7 +4,7 @@
 <h2>登録商品一覧</h2>
     <table class="table">
         <thead>
-            <th>商品id</th><th>商品名</th><th>商品説明</th><th>金額</th>
+            <th>商品id</th><th>商品名</th><th>商品説明</th><th>金額</th><th>性別</th><th>商品状態</th>
         </thead>
     @foreach ($items as $item)
         <tbody>
@@ -13,6 +13,8 @@
                 <th>{{$item->name}}</th>
                 <th>{{$item->explanation}}</th>
                 <th>{{$item->price}}</th>
+                <th>{{$item->gender}}</th>
+                <th>{{$item->condition}}</th>
 
             </tr>
         </tbody>
