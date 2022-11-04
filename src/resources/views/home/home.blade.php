@@ -27,15 +27,15 @@
         @foreach ($items as $item)
             <form action="/home/detail" method="post">
             @csrf
+            <div class="col-sm-4">
+            <div class="card">
+            <div class="card-body">
             <input type="hidden" name="id" value="{{$item->id}}">
             <input type="hidden" name="name" value="{{$item->name}}">
             <input type="hidden" name="explanation" value="{{$item->explanation}}">
             <input type="hidden" name="price" value="{{$item->price}}">
             <input type="hidden" name="gender" value="{{$item->gender}}">
             <input type="hidden" name="condition" value="{{$item->condition}}">
-            <div class="col-sm-4">
-              <div class="card">
-                <div class="card-body">
                   <p class="card-title">{{$item->name}}</p>
                   <p class="card-text">{{$item->explanation}}</p>
                   <p class="card-text">{{$item->gender}}</p>
