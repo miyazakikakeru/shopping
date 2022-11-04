@@ -12,17 +12,24 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Styles -->
+    <style>
+        h1{font-size:40px;}
+        h2{font-size:50px;}
+        .p1{font-size:60px;}
+        .p2{font-size:60px;}
+        .p3{font-size:60px;}
+        .p4{font-size:60px;}
+
+    </style>
 
 </head>
 <body>
-    <article class="container">
     <h1>商品詳細ページ</h1>
-    <div class="row">
-        <div class="col">
-    <form action="/home" method="post">
-        @csrf
-        
-            <button type="submit" class="btn btn-primary">リセット</button>
-        </form>
+    <h2>{{$name}}</h2>
+    <p class="p1">{{$explanation}}</p>
+    <p class="p2">{{$price}}</p>
+    <p class="p3">{{$gender}}</p>
+    <p class="p4">{{$condition}}</p>
+
 
 </body>

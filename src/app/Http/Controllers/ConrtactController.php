@@ -19,11 +19,8 @@ class ConrtactController extends Controller
     }
     public function home(Request $request){
         $inputs = $request->all();
-        return view('home/home',$inputs);
-    }
-    public function search(Request $request){
-        $inputs = $request->all();
-        return view('home/search',$inputs);
+        $items = DB::table('product')->get();
+        return view('home/home',['inputs'=>$inputs,'items'=>$items]);
     }
     public function detail(Request $request){
         $inputs = $request->all();
