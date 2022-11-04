@@ -20,10 +20,10 @@
         <form action="/home" method="post">
             @csrf
             <div class="row">
-                <label class="col-2 col-form-label" for="id">ID<span class="badge bg-danger">必須</span></label>
+                <label class="col-2 col-form-label" for="mail_address">mail_address<span class="badge bg-danger">必須</span></label>
                 <div class="col-10">
-                    {{ $id }}
-                    <input type="hidden" class="form-control" readonly  id="id" name="id" value ="{{ $id }}">
+                    {{ $mail_address }}
+                    <input type="hidden" class="form-control" readonly  id="mail_address" name="mail_address" value ="{{ $mail_address }}">
                 </div>
             </div>
 
