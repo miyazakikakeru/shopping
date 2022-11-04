@@ -14,15 +14,16 @@
     <!-- Styles -->
 
 </head>
+
 <body>
     <article class="container">
-    
-        
+
+
         <p>購入確定</p>
         <form action="/home/" method="post">
             @csrf
-        <button class="btn btn-primary">ホームへ</button>
-    </form>
+            <button class="btn btn-primary">ホームへ</button>
+        </form>
 
 
 </body>

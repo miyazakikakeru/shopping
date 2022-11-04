@@ -13,25 +13,42 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Styles -->
     <style>
-        h1{font-size:40px;}
-        h2{font-size:50px;}
-        .p1{font-size:60px;}
-        .p2{font-size:60px;}
-        .p3{font-size:60px;}
-        .p4{font-size:60px;}
+        h1 {
+            font-size: 40px;
+        }
 
+        h2 {
+            font-size: 50px;
+        }
+
+        .p1 {
+            font-size: 60px;
+        }
+
+        .p2 {
+            font-size: 60px;
+        }
+
+        .p3 {
+            font-size: 60px;
+        }
+
+        .p4 {
+            font-size: 60px;
+        }
     </style>
 
 </head>
+
 <body>
     <h1>商品詳細ページ</h1>
-    <h2>{{$name}}</h2>
-    <p class="p1">{{$explanation}}</p>
-    <p class="p3">{{$gender}}</p>
-    <p class="p4">{{$condition}}</p>
-     <p class="p2">¥{{$price}}</p>
+    <h2>{{ $name }}</h2>
+    <p class="p1">{{ $explanation }}</p>
+    <p class="p3">{{ $gender }}</p>
+    <p class="p4">{{ $condition }}</p>
+    <p class="p2">¥{{ $price }}</p>
     <form action="/home/confirm" method="post">
         @csrf
-         <button class="btn btn-primary">購入</button>
-        </form>
+        <button class="btn btn-primary">購入</button>
+    </form>
 </body>
