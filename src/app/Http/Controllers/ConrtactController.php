@@ -19,6 +19,7 @@ class ConrtactController extends Controller
     }
     public function home(Request $request){
         $inputs = $request->all();
+        
         return view('home/home',$inputs);
     }
     public function search(Request $request){
