@@ -21,6 +21,8 @@
         <div class="col">
     <form action="/home/search" method="post">
         @csrf
+        @foreach()
+        @endforeach
             <button type="submit" class="btn btn-primary">検索</button>
     </form>
 
