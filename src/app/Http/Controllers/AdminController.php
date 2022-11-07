@@ -29,7 +29,12 @@ class AdminController extends Controller
             'condition' => $request->condition,
         ];
         DB::table('product')->insert($param);
+
         $items = DB::table('product')->get();
+
+        //
+        Product::fill($request->all())->save();
+
         return view('admin.adminhome',['items'=>$items]);
     }
 

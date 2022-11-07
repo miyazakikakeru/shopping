@@ -23,7 +23,7 @@
                 <form action="/home" method="post">
                     @csrf
                     <div class="row">
-                        <label class="col-2 col-form-label" for="mail_address">mail_address<span
+                        <label class="col-2 col-form-label" for="mail_address">メールアドレス<span
                                 class="badge bg-danger">必須</span></label>
                         <div class="col-10">
                             {{ $mail_address }}
