@@ -11,9 +11,10 @@ class UserRequest extends FormRequest
      *
      * @return bool
      */
+
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +25,14 @@ class UserRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'mail_address' => 'email',
+            'password' => 'required',
+        ];
+    }
+    public function messages(){
+        return [
+            'mail_address.email'=>'メールアドレスが不正です',
+            'password.required'=>'必須項目です',
         ];
     }
 }

@@ -13,7 +13,7 @@ class AdminRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,15 @@ class AdminRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'id' => 'required',
+            'password' => 'required',
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'id.required'=>'必須項目です',
+            'password.required'=>'必須項目です',
         ];
     }
 }

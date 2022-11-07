@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\user\UserRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\ConrtactRequest;
 use App\Http\Controllers\component;
 use App\Mail\ContactThanks;
-class ConrtactController extends Controller
+class UserController extends Controller
 {
     public function index(){
         return view('input');
     }
 
-    public function check(ConrtactRequest $request){
+    public function check(UserRequest $request){
         $inputs = $request->all();
         return view('check', $inputs);
     }

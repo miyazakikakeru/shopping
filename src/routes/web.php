@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\ConrtactController;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
+
 
 
 /*
@@ -17,17 +17,9 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-Route::get('/', [ConrtactController::class, 'index']);
-Route::post('/', [ConrtactController::class, 'check']);
-Route::post('/home', [ConrtactController::class, 'home']); 
-Route::post('/home/detail', [ConrtactController::class, 'detail']);//詳細
-Route::post('/home/confirm', [ConrtactController::class, 'confirm']);
-
-Route::get('/admin', [AdminController::class, 'adminlogin']);
-Route::post('/admin/home', [AdminController::class, 'adminhome']);
-Route::get('/admin/home', [AdminController::class, 'adminhome']);
-Route::post('/admin/in', [AdminController::class, 'productInsert']);
-Route::post('/admin/del', [AdminController::class, 'productDelete']);
-Route::get('/admin/insert', [AdminController::class, 'adminInsert']);
-Route::get('/admin/delete', [AdminController::class, 'adminDelete']);
+Route::get('/', [UserController::class, 'index']);
+Route::post('/', [UserController::class, 'check']);
+Route::post('/home', [UserController::class, 'home']); 
+Route::post('/home/detail', [UserController::class, 'detail']);//詳細
+Route::post('/home/confirm', [UserController::class, 'confirm']);
 

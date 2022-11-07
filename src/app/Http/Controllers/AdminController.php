@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\admin\AdminRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\ConrtactRequest;
@@ -14,7 +15,7 @@ class AdminController extends Controller
         return view('admin.adminlogin',$inputs);
     }
 
-    public function adminhome(Request $request){
+    public function adminhome(AdminRequest $request){
         $items = DB::table('product')->get();
         return view('admin.adminhome',['items'=>$items]);
     }

@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\ConrtactController;
 use App\Http\Controllers\AdminController;
 
 
@@ -17,12 +16,12 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-
-Route::get('/', [AdminController::class, 'adminlogin']);
-Route::post('/home', [AdminController::class, 'adminhome']);
-Route::get('/home', [AdminController::class, 'adminhome']);
-Route::post('/in', [AdminController::class, 'productInsert']);
-Route::post('/del', [AdminController::class, 'productDelete']);
-Route::get('/insert', [AdminController::class, 'adminInsert']);
-Route::get('/delete', [AdminController::class, 'adminDelete']);
-
+Route::prefix('admin')->group(function () {
+    Route::get('/', [AdminController::class, 'adminlogin']);
+    Route::post('/home', [AdminController::class, 'adminhome']);
+    Route::get('/home', [AdminController::class, 'adminhome']);
+    Route::post('/in', [AdminController::class, 'productInsert']);
+    Route::post('/del', [AdminController::class, 'productDelete']);
+    Route::get('/insert', [AdminController::class, 'adminInsert']);
+    Route::get('/delete', [AdminController::class, 'adminDelete']);
+});
