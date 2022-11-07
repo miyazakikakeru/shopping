@@ -15,7 +15,6 @@
                 <th>{{$item->price}}</th>
                 <th>{{$item->gender}}</th>
                 <th>{{$item->condition}}</th>
-
             </tr>
         </tbody>
     @endforeach
