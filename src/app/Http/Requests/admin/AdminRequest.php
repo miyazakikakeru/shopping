@@ -24,8 +24,8 @@ class AdminRequest extends FormRequest
     public function rules()
     {
         return [
-            'id' => 'required',
-            'password' => 'required',
+            //'id' => 'required',
+            //'password' => 'required',
         ];
     }
     public function messages()
