@@ -38,7 +38,7 @@ class AdminController extends Controller
     }
 
     public function productDelete(Request $request){
-        DB::table('product')->where('name',$request->deleteName)->where('id',$request->deleteId)->delete();
+        Product::where('name',$request->deleteName)->where('id',$request->deleteId)->delete();
         $items = Product::all();
         return view('admin.adminhome',['items'=>$items]);
     }
