@@ -33,8 +33,7 @@ class AdminController extends Controller
 
         $items = DB::table('product')->get();
 
-        //
-        Product::fill($request->all())->save();
+        //Product::fill($request->all())->save();
 
         return view('admin.adminhome',['items'=>$items]);
     }
