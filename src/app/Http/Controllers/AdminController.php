@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Http\Requests\admin\AdminRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Http\Requests\ConrtactRequest;
 use App\Http\Controllers\component;
-use App\Mail\ContactThanks;
+
 class AdminController extends Controller
 {
     public function adminlogin(Request $request){
@@ -16,7 +16,7 @@ class AdminController extends Controller
     }
 
     public function adminhome(AdminRequest $request){
-        $items = DB::table('product')->get();
+        $items = Product::all();
         return view('admin.adminhome',['items'=>$items]);
     }
 
@@ -30,8 +30,7 @@ class AdminController extends Controller
             'condition' => $request->condition,
         ];
         DB::table('product')->insert($param);
-
-        $items = DB::table('product')->get();
+        $items = Product::all();
 
         //Product::fill($request->all())->save();
 
@@ -40,7 +39,7 @@ class AdminController extends Controller
 
     public function productDelete(Request $request){
         DB::table('product')->where('name',$request->deleteName)->where('id',$request->deleteId)->delete();
-        $items = DB::table('product')->get();
+        $items = Product::all();
         return view('admin.adminhome',['items'=>$items]);
     }
 
