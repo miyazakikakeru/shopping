@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
 use App\Models\Product;
 use App\Http\Requests\admin\AdminRequest;
 use Illuminate\Http\Request;
@@ -21,19 +22,9 @@ class AdminController extends Controller
     }
 
     public function productInsert(Request $request){
-        $param=[
-            'id'=> $request->id,
-            'name'=> $request->name,
-            'explanation' => $request->explanation,
-            'price' => $request->price,
-            'gender' => $request->gender,
-            'condition' => $request->condition,
-        ];
-        DB::table('product')->insert($param);
         $items = Product::all();
-
-        //Product::fill($request->all())->save();
-
+        $Product = new Product();
+        $Product->fill($request->all())->save();
         return view('admin.adminhome',['items'=>$items]);
     }
 
