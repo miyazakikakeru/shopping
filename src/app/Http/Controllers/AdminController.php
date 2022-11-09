@@ -23,16 +23,14 @@ class AdminController extends Controller
     }
 
     public function productInsert(Request $request){
-        $items = Product::all();
         $Product = new Product();
         $Product->fill($request->all())->save();
-        return view('admin.adminhome',['items'=>$items]);
+        return redirect('/admin/home');
     }
 
     public function productDelete(Request $request){
         Product::where('name',$request->deleteName)->where('id',$request->deleteId)->delete();
-        $items = Product::all();
-        return view('admin.adminhome',['items'=>$items]);
+        return redirect('/admin/home');
     }
 
     public function adminInsert(Request $request){
@@ -54,6 +52,7 @@ class AdminController extends Controller
         return redirect('/admin/home');
     }
     public function delete(Request $request){
+        Admin::where('id',$request->id)->delete();
         return redirect('/admin/home');
     }
 
