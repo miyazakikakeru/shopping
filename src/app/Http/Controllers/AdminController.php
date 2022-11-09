@@ -41,5 +41,11 @@ class AdminController extends Controller
     public function adminDelete(Request $request){
         return view('admin.delete');
     }
+    public function adminDel(Request $request){
+        return view('admin.adminDel');
+    }
+    public function adminIn(Request $request){
+        return view('admin.adminIn');
+    }
 
 }

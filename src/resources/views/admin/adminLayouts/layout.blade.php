@@ -39,6 +39,16 @@
                     </svg>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link @yield('4')" href="adminIn">
+                    管理者の登録
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @yield('5')" href="adminDel">
+                    管理者の削除
+                </a>
+            </li>
         </ul>
         @yield('content')
     </body>
