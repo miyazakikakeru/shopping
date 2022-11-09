@@ -17,8 +17,9 @@ class AdminController extends Controller
     }
 
     public function adminhome(AdminRequest $request){
-        $items = Product::all();
-        return view('admin.adminhome',['items'=>$items]);
+        $products = Product::all();
+        $admins = Admin::all();
+        return view('admin.adminhome',['products'=>$products,'admins'=>$admins]);
     }
 
     public function productInsert(Request $request){
@@ -48,6 +49,11 @@ class AdminController extends Controller
         return view('admin.adminIn');
     }
     public function insert(Request $request){
+        $Admin = new Admin();
+        $Admin->fill($request->all())->save();
+        return redirect('/admin/home');
+    }
+    public function delete(Request $request){
         return redirect('/admin/home');
     }
 
