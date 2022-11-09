@@ -26,6 +26,8 @@ Route::prefix('admin')->group(function () {
     Route::get('/delete', [AdminController::class, 'adminDelete']);
     Route::get('/adminIn', [AdminController::class, 'adminIn']);
     Route::get('/adminDel', [AdminController::class, 'adminDel']);
+    Route::post('/adminInsert', [AdminController::class, 'insert']);
+    Route::post('/adminDelete', [AdminController::class, 'delete']);
 
 
 });

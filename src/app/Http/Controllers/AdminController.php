@@ -47,5 +47,9 @@ class AdminController extends Controller
     public function adminIn(Request $request){
         return view('admin.adminIn');
     }
+    public function insert(Request $request){
+        return redirect('/admin/home');
+    }
+
 
 }
