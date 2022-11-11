@@ -14,7 +14,7 @@
     </head>
     <body>
         <h1>管理者画面ログイン</h1>
-        <form action="/admin/home" method="post">
+        <form action="/admin/check" method="post">
             @csrf
             <div class="row">
                 <label class="col-2 col-form-label" for="id">管理者ID<span class="badge bg-danger">必須</span></label>

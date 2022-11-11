@@ -21,6 +21,9 @@ class AdminController extends Controller
         $admins = Admin::all();
         return view('admin.adminhome',['products'=>$products,'admins'=>$admins]);
     }
+    public function check(AdminRequest $request){
+        return redirect('/admin/home');
+    }
 
     public function productInsert(Request $request){
         $Product = new Product();
