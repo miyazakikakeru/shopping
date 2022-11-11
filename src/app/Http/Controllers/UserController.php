@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Http\Requests\user\UserRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -17,6 +18,18 @@ class UserController extends Controller
     public function check(UserRequest $request){
         $inputs = $request->all();
         return view('check', $inputs);
+    }
+    public function InUser(Request $request){
+        $User = new User();
+        $a=[
+            'name'=>$request->name,
+            'password'=>$request->password,
+        ];
+        $User->fill($a)->save();
+        return redirect('/');
+    }
+    public function Register(Request $request){
+        return view('Register');
     }
     public function home(Request $request){
         $inputs = $request->all();

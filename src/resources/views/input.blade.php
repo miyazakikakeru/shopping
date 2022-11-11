@@ -49,6 +49,12 @@
 
                     <button type="submit" class="btn btn-primary">アクセス</button>
                 </form>
+                <form action="/Register" method="post">
+                    @csrf
+                    <button type="submit" class="btn btn-primary">新規登録はこちら</button>
+                </form>
+                    
+
 </body>
 
 </html>

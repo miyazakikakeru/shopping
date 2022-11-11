@@ -19,6 +19,8 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', [UserController::class, 'index']);
 Route::post('/', [UserController::class, 'check']);
+Route::post('/InUser', [UserController::class, 'InUser']);
+Route::post('/Register', [UserController::class, 'Register']);
 Route::post('/home', [UserController::class, 'home']); 
 Route::post('/home/detail', [UserController::class, 'detail']);//詳細
 Route::post('/home/confirm', [UserController::class, 'confirm']);
