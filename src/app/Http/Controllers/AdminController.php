@@ -16,12 +16,12 @@ class AdminController extends Controller
         return view('admin.adminlogin',$inputs);
     }
 
-    public function adminhome(AdminRequest $request){
+    public function adminhome(Request $request){
         $products = Product::all();
         $admins = Admin::all();
         return view('admin.adminhome',['products'=>$products,'admins'=>$admins]);
     }
-    public function check(AdminRequest $request){
+    public function check(Request $request){
         return redirect('/admin/home');
     }
 
