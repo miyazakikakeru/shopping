@@ -50,6 +50,5 @@
             @endforeach
         </div>
     </div>
-
-
+    
 </body>

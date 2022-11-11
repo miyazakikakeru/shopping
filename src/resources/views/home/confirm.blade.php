@@ -20,7 +20,7 @@
 
 
         <p>購入確定</p>
-        <form action="/home/" method="post">
+        <form action="/home" method="post">
             @csrf
             <button class="btn btn-primary">ホームへ</button>
         </form>
