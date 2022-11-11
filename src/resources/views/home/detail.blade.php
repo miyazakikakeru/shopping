@@ -51,4 +51,8 @@
         @csrf
         <button class="btn btn-primary">購入</button>
     </form>
+    <form action="/home/" method="post">
+        @csrf
+        <button class="btn btn-primary">戻る</button>
+    </form>
 </body>
