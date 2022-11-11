@@ -35,16 +35,16 @@
     @endforeach
     </table>
 </table>
-<h2>管理者一覧</h2>
+<h2>会員一覧</h2>
 <table class="table">
     <thead>
-        <th>管理者ID</th><th>管理者名</th><th>パスワード</th>
+        <th>会員名</th><th>メールアドレス</th><th>パスワード</th>
     </thead>
 @foreach ($Users as $item)
     <tbody>
         <tr>
-            <th>{{$item->id}}</th>
             <th>{{$item->name}}</th>
+            <th>{{$item->mail_address}}</th>
             <th>{{$item->password}}</th>
         </tr>
     </tbody>

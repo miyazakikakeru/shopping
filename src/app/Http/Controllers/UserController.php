@@ -23,6 +23,7 @@ class UserController extends Controller
         $User = new User();
         $a=[
             'name'=>$request->name,
+            'mail_address'=>$request->mail_address,
             'password'=>$request->password,
         ];
         $User->fill($a)->save();
