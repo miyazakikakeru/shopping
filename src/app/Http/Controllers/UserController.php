@@ -15,8 +15,10 @@ class UserController extends Controller
         return view('input');
     }
 
-    public function check(UserRequest $request){
+    public function check(Request $request){
         $inputs = $request->all();
+        $request->session()->put('mail_address',$request->mail_address);
+        $request->session()->put('password',$request->password);
         return view('check', $inputs);
     }
     public function InUser(Request $request){
