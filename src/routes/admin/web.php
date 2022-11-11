@@ -18,17 +18,17 @@ use App\Http\Controllers\AdminController;
 
 Route::prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'adminlogin']);
-    Route::post('/home', [AdminController::class, 'adminhome']);
-    Route::get('/home', [AdminController::class, 'adminhome']);
     Route::post('/check', [AdminController::class, 'check']);
-    Route::post('/in', [AdminController::class, 'productInsert']);
-    Route::post('/del', [AdminController::class, 'productDelete']);
-    Route::get('/insert', [AdminController::class, 'adminInsert']);
-    Route::get('/delete', [AdminController::class, 'adminDelete']);
-    Route::get('/adminIn', [AdminController::class, 'adminIn']);
-    Route::get('/adminDel', [AdminController::class, 'adminDel']);
-    Route::post('/adminInsert', [AdminController::class, 'insert']);
-    Route::post('/adminDelete', [AdminController::class, 'delete']);
+    Route::post('/home', [AdminController::class, 'adminhome'])->middleware('AdminLogin');
+    Route::get('/home', [AdminController::class, 'adminhome'])->middleware('AdminLogin');
+    Route::post('/in', [AdminController::class, 'productInsert'])->middleware('AdminLogin');
+    Route::post('/del', [AdminController::class, 'productDelete'])->middleware('AdminLogin');
+    Route::get('/insert', [AdminController::class, 'adminInsert'])->middleware('AdminLogin');
+    Route::get('/delete', [AdminController::class, 'adminDelete'])->middleware('AdminLogin');
+    Route::get('/adminIn', [AdminController::class, 'adminIn'])->middleware('AdminLogin');
+    Route::get('/adminDel', [AdminController::class, 'adminDel'])->middleware('AdminLogin');
+    Route::post('/adminInsert', [AdminController::class, 'insert'])->middleware('AdminLogin');
+    Route::post('/adminDelete', [AdminController::class, 'delete'])->middleware('AdminLogin');
 
 
 });

@@ -12,17 +12,23 @@ use App\Http\Controllers\component;
 class AdminController extends Controller
 {
     public function adminlogin(Request $request){
+        if(count(Admin::where('id',$request->session()->get('id'))->where('password',$request->session()->get('password'))->get())>0){
+            return redirect('/admin/home');
+        }
         $inputs = $request->all();
         return view('admin.adminlogin',$inputs);
+    }
+
+    public function check(Request $request){
+        $request->session()->put('id',$request->id);
+        $request->session()->put('password',$request->password);
+        return redirect('/admin/home');
     }
 
     public function adminhome(Request $request){
         $products = Product::all();
         $admins = Admin::all();
         return view('admin.adminhome',['products'=>$products,'admins'=>$admins]);
-    }
-    public function check(Request $request){
-        return redirect('/admin/home');
     }
 
     public function productInsert(Request $request){
