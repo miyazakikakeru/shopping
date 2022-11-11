@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Admin;
 use App\Models\Product;
 use App\Http\Requests\admin\AdminRequest;
@@ -28,7 +29,8 @@ class AdminController extends Controller
     public function adminhome(Request $request){
         $products = Product::all();
         $admins = Admin::all();
-        return view('admin.adminhome',['products'=>$products,'admins'=>$admins]);
+        $Users = User::all();
+        return view('admin.adminhome',['products'=>$products,'admins'=>$admins,'Users'=>$Users]);
     }
 
     public function productInsert(Request $request){

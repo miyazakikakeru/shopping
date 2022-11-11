@@ -34,4 +34,20 @@
         </tbody>
     @endforeach
     </table>
+</table>
+<h2>管理者一覧</h2>
+<table class="table">
+    <thead>
+        <th>管理者ID</th><th>管理者名</th><th>パスワード</th>
+    </thead>
+@foreach ($Users as $item)
+    <tbody>
+        <tr>
+            <th>{{$item->id}}</th>
+            <th>{{$item->name}}</th>
+            <th>{{$item->password}}</th>
+        </tr>
+    </tbody>
+@endforeach
+</table>
 @endsection
