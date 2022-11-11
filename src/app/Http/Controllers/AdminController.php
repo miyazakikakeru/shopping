@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
+use App\Models\Product;
 use App\Http\Requests\admin\AdminRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Http\Requests\ConrtactRequest;
 use App\Http\Controllers\component;
-use App\Mail\ContactThanks;
+
 class AdminController extends Controller
 {
     public function adminlogin(Request $request){
@@ -16,33 +17,20 @@ class AdminController extends Controller
     }
 
     public function adminhome(AdminRequest $request){
-        $items = DB::table('product')->get();
-        return view('admin.adminhome',['items'=>$items]);
+        $products = Product::all();
+        $admins = Admin::all();
+        return view('admin.adminhome',['products'=>$products,'admins'=>$admins]);
     }
 
     public function productInsert(Request $request){
-        $param=[
-            'id'=> $request->id,
-            'name'=> $request->name,
-            'explanation' => $request->explanation,
-            'price' => $request->price,
-            'gender' => $request->gender,
-            'condition' => $request->condition,
-        ];
-        DB::table('product')->insert($param);
-
-        $items = DB::table('product')->get();
-
-        //
-        Product::fill($request->all())->save();
-
-        return view('admin.adminhome',['items'=>$items]);
+        $Product = new Product();
+        $Product->fill($request->all())->save();
+        return redirect('/admin/home');
     }
 
     public function productDelete(Request $request){
-        DB::table('product')->where('name',$request->deleteName)->where('id',$request->deleteId)->delete();
-        $items = DB::table('product')->get();
-        return view('admin.adminhome',['items'=>$items]);
+        Product::where('name',$request->deleteName)->where('id',$request->deleteId)->delete();
+        return redirect('/admin/home');
     }
 
     public function adminInsert(Request $request){
@@ -52,5 +40,21 @@ class AdminController extends Controller
     public function adminDelete(Request $request){
         return view('admin.delete');
     }
+    public function adminDel(Request $request){
+        return view('admin.adminDel');
+    }
+    public function adminIn(Request $request){
+        return view('admin.adminIn');
+    }
+    public function insert(Request $request){
+        $Admin = new Admin();
+        $Admin->fill($request->all())->save();
+        return redirect('/admin/home');
+    }
+    public function delete(Request $request){
+        Admin::where('id',$request->id)->delete();
+        return redirect('/admin/home');
+    }
+
 
 }
