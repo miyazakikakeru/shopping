@@ -14,6 +14,7 @@
     <!-- Styles -->
 
 </head>
+
 <body>
     <article class="container">
         <h1>会員登録</h1>
@@ -32,14 +33,16 @@
                         <label class="col-2 col-form-label" for="mail_address">メールアドレス<span
                                 class="badge bg-danger">必須</span></label>
                         <div class="col-10">
-                            <input type="text" name="mail_address" id="mail_address" class="form-control" placeholder="mail_address">
+                            <input type="text" name="mail_address" id="mail_address" class="form-control"
+                                placeholder="mail_address">
                         </div>
                     </div>
 
                     <div class="row">
                         <label class="col-2 col-form-label" for="password">パスワード<span class="badge bg-danger">必須</label>
                         <div class="col-10">
-                            <input type="text" name="password" id="password" class="form-control" placeholder="password">
+                            <input type="text" name="password" id="password" class="form-control"
+                                placeholder="password">
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">登録</button>

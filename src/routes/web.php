@@ -26,4 +26,5 @@ Route::post('/home', [UserController::class, 'home'])->middleware('UserLogin');
 Route::get('/home', [UserController::class, 'home'])->middleware('UserLogin'); 
 Route::post('/home/detail', [UserController::class, 'detail'])->middleware('UserLogin');//詳細
 Route::post('/home/confirm', [UserController::class, 'confirm'])->middleware('UserLogin');
+Route::post('/target', [UserController::class, 'target'])->middleware('UserLogin');
 

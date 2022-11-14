@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\User;
 use App\Http\Requests\user\UserRequest;
 use Illuminate\Http\Request;
@@ -35,10 +36,38 @@ class UserController extends Controller
         return view('Register');
     }
     public function home(Request $request){
-        $inputs = $request->all();
-        $items = DB::table('product')->get();
-        return view('home/home',['inputs'=>$inputs,'items'=>$items]);
+        $items = Product::get();
+        return view('home/home',['items'=>$items]);
     }
+
+    public function target(Request $request){
+        $items = Product::query();
+        if(empty($request->man)||empty($request->girl)){
+            if(!empty($request->man)){
+                $items=$items->where('gender',$request->man);
+            }
+            if(!empty($request->girl)){
+                $items=$items->where('gender',$request->girl);
+            }
+        }
+        if(!empty($request->moneyMin)){
+            $items=$items->where('price','>=',$request->moneyMin);
+        }
+        if(!empty($request->moneyMax)){
+            $items=$items->where('price','<=',$request->moneyMax);
+        }
+        if(empty($request->new)||empty($request->old)){
+            if(!empty($request->new)){
+                $items=$items->where("condition","$request->new");
+            }
+            if(!empty($request->old)){
+                $items=$items->where("condition","$request->old");
+            }
+        }
+        $items=$items->get();
+        return view('home/home',['items'=>$items]);
+    }
+    
     public function detail(Request $request){
         $inputs = $request->all();
         return view('home/detail',$inputs);
