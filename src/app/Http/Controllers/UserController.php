@@ -11,27 +11,27 @@ use App\Http\Controllers\component;
 use App\Mail\ContactThanks;
 class UserController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
+        if(count(User::where('mail_address',$request->session()->get('mail_address'))->where('password',$request->session()->get('password'))->get())>0){
+            return redirect('/home');
+        }
         return view('input');
     }
 
     public function check(Request $request){
-        $inputs = $request->all();
         $request->session()->put('mail_address',$request->mail_address);
         $request->session()->put('password',$request->password);
-        return view('check', $inputs);
+        return redirect('/home');
     }
     public function InUser(Request $request){
         $User = new User();
-        $a=[
-            'name'=>$request->name,
-            'mail_address'=>$request->mail_address,
-            'password'=>$request->password,
-        ];
-        $User->fill($a)->save();
+        $User->fill($request->all())->save();
         return redirect('/');
     }
     public function Register(Request $request){
+        if(count(User::where('mail_address',$request->session()->get('mail_address'))->where('password',$request->session()->get('password'))->get())>0){
+            return redirect('/home');
+        }
         return view('Register');
     }
     public function home(Request $request){

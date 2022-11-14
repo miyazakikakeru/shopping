@@ -20,7 +20,7 @@
         <h1>ログイン</h1>
         <div class="row">
             <div class="col">
-                <form action="/" method="post">
+                <form action="/check" method="post">
                     @csrf
                     <div class="row">
                         <label class="col-2 col-form-label" for="id">メールアドレス<span
@@ -47,9 +47,9 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">アクセス</button>
+                    <button type="submit" class="btn btn-primary">ログイン</button>
                 </form>
-                <form action="/Register" method="post">
+                <form action="/register" method="post">
                     @csrf
                     <button type="submit" class="btn btn-primary">新規登録はこちら</button>
                 </form>

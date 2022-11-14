@@ -16,6 +16,7 @@
 </head>
 
 <body>
+<article  class="container">
     <h1>商品ホーム</h1>
     <form action="/home" method="post">
         @csrf
@@ -23,32 +24,39 @@
             絞る
         </button>
     </form>
-    <div class="container">
-        <div class="row">
-            @foreach ($items as $item)
-                <form action="/home/detail" method="post">
-                    @csrf
-                    <input type="hidden" name="id" value="{{ $item->id }}">
-                    <input type="hidden" name="name" value="{{ $item->name }}">
-                    <input type="hidden" name="explanation" value="{{ $item->explanation }}">
-                    <input type="hidden" name="price" value="{{ $item->price }}">
-                    <input type="hidden" name="gender" value="{{ $item->gender }}">
-                    <input type="hidden" name="condition" value="{{ $item->condition }}">
-                    <div class="col-sm-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="card-title">{{ $item->name }}</p>
-                                <p class="card-text">{{ $item->explanation }}</p>
-                                <p class="card-text">{{ $item->gender }}</p>
-                                <p class="card-text">{{ $item->condition }}</p>
-                                <p class="card-text">¥{{ $item->price }}</p>
-                                <button class="btn btn-primary">購入</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            @endforeach
+
+    <div class="row">
+        @foreach($items as $item)
+        <div class="col-4">
+        <div class="card">
+        <form action="/home/detail" method="post">
+            @csrf
+            <div class="card-body">
+            <input type="hidden" name="id" value="{{ $item->id }}">
+            <input type="hidden" name="name" value="{{ $item->name }}">
+            <input type="hidden" name="explanation" value="{{ $item->explanation }}">
+            <input type="hidden" name="price" value="{{ $item->price }}">
+            <input type="hidden" name="gender" value="{{ $item->gender }}">
+            <input type="hidden" name="condition" value="{{ $item->condition }}">
+            <h5 class="card-title">{{ $item->name }}</h5>
+            <p class="card-text">{{ $item->explanation }}</p>
+            <p class="card-text">{{ $item->gender }}</p>
+            <p class="card-text">{{ $item->condition }}</p>
+            <p class="card-text">¥{{ $item->price }}</p>
+            <button class="btn btn-primary">購入</button>
+        </form>
         </div>
+        </div>   
+        </div>
+        @endforeach
     </div>
-    
+</article>
 </body>
+
+
+
+
+
+
+
+
