@@ -13,7 +13,7 @@ class DelAdminRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,12 @@ class DelAdminRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'id'=>'exists:admin,id',
+        ];
+    }
+    public function messages(){
+        return [
+            'id.exists'=>'この管理者IDは既に使用されています',
         ];
     }
 }

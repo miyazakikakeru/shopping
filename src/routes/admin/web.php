@@ -28,11 +28,11 @@ Route::prefix('admin')->group(function () {
     Route::get('/insert', [AdminController::class, 'adminInsert']);//->middleware('AdminLogin');
 
 //DBController
-    Route::post('/in', [DBController::class, 'productInsert']);//->middleware('AdminLogin');
-    Route::post('/del', [DBController::class, 'productDelete']);//->middleware('AdminLogin');
+    Route::post('/in', [DBController::class, 'InProduct']);//->middleware('AdminLogin');
+    Route::post('/del', [DBController::class, 'DelProduct']);//->middleware('AdminLogin');
 
-    Route::post('/adminInsert', [DBController::class, 'insert']);//->middleware('AdminLogin');
-    Route::post('/adminDelete', [DBController::class, 'delete']);//->middleware('AdminLogin');
+    Route::post('/adminInsert', [DBController::class, 'InAdmin']);//->middleware('AdminLogin');
+    Route::post('/adminDelete', [DBController::class, 'DelAdmin']);//->middleware('AdminLogin');
 
 
 

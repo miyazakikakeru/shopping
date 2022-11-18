@@ -19,13 +19,11 @@ class AdminController extends Controller
         $inputs = $request->all();
         return view('admin.adminlogin',$inputs);
     }
-
     public function check(Request $request){
         $request->session()->put('id',$request->id);
         $request->session()->put('password',$request->password);
         return redirect('/admin/home');
     }
-
     public function adminhome(Request $request){
         $products = Product::all();
         $admins = Admin::all();
@@ -35,7 +33,6 @@ class AdminController extends Controller
     public function adminInsert(Request $request){
         return view('admin.insert');
     }
-
     public function adminDelete(Request $request){
         return view('admin.delete');
     }
