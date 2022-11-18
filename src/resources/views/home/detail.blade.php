@@ -49,7 +49,7 @@
     <p class="p2">¥{{ $price }}</p>
     <form action="/home/confirm" method="post">
         @csrf
-        <button class="btn btn-primary">購入確定</button>
+        <button class="btn btn-danger">購入確定</button>
     </form>
     <form action="/home" method="post">
         @csrf
