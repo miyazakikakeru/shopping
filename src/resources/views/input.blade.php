@@ -18,6 +18,9 @@
 <body>
     <article class="container">
         <h1>ログイン</h1>
+        @foreach($errors->all() as $error)
+        <span class="text-danger">{{$error}}<br></span>
+        @endforeach
         <div class="row">
             <div class="col">
                 <form action="/check" method="post">
@@ -28,11 +31,6 @@
                         <div class="col-10">
                             <input type="text" name="mail_address" id="mail_address" class="form-control"
                                 placeholder="mail_address" value="{{ old('mail_address') }}">
-                            @if ($errors->first('mail_address'))
-                                @foreach ($errors->get('mail_address') as $message)
-                                    <p class="validation">※{{ $message }}</p>
-                                @endforeach
-                            @endif
                         </div>
                     </div>
 
@@ -41,11 +39,6 @@
                         <div class="col-10">
                             <input type="text" name="password" id="password" class="form-control"
                                 placeholder="password" value="{{ old('password') }}">
-                            @if ($errors->first('password'))
-                                @foreach ($errors->get('password') as $message)
-                                    <p class="validation">※{{ $message }}</p>
-                                @endforeach
-                            @endif
                         </div>
                     </div>
 
