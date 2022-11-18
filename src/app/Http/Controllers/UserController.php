@@ -6,9 +6,10 @@ use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Http\Requests\ConrtactRequest;
 use App\Http\Controllers\component;
 use App\Mail\ContactThanks;
+use App\Http\Requests\UserLoginRequest;
+
 class UserController extends Controller
 {
     public function index(Request $request){
@@ -17,7 +18,7 @@ class UserController extends Controller
         }
         return view('input');
     }
-    public function check(Request $request){
+    public function check(UserLoginRequest $request){
         $request->session()->put('mail_address',$request->mail_address);
         $request->session()->put('password',$request->password);
         return redirect('/home');
