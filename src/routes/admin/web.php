@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DBController;
 
 
 /*
@@ -21,14 +22,18 @@ Route::prefix('admin')->group(function () {
     Route::post('/check', [AdminController::class, 'check']);
     Route::post('/home', [AdminController::class, 'adminhome']);//->middleware('AdminLogin');
     Route::get('/home', [AdminController::class, 'adminhome']);//->middleware('AdminLogin');
-    Route::post('/in', [AdminController::class, 'productInsert']);//->middleware('AdminLogin');
-    Route::post('/del', [AdminController::class, 'productDelete']);//->middleware('AdminLogin');
-    Route::get('/insert', [AdminController::class, 'adminInsert']);//->middleware('AdminLogin');
     Route::get('/delete', [AdminController::class, 'adminDelete']);//->middleware('AdminLogin');
     Route::get('/adminIn', [AdminController::class, 'adminIn']);//->middleware('AdminLogin');
     Route::get('/adminDel', [AdminController::class, 'adminDel']);//->middleware('AdminLogin');
-    Route::post('/adminInsert', [AdminController::class, 'insert']);//->middleware('AdminLogin');
-    Route::post('/adminDelete', [AdminController::class, 'delete']);//->middleware('AdminLogin');
+    Route::get('/insert', [AdminController::class, 'adminInsert']);//->middleware('AdminLogin');
+
+//DBController
+    Route::post('/in', [DBController::class, 'productInsert']);//->middleware('AdminLogin');
+    Route::post('/del', [DBController::class, 'productDelete']);//->middleware('AdminLogin');
+
+    Route::post('/adminInsert', [DBController::class, 'insert']);//->middleware('AdminLogin');
+    Route::post('/adminDelete', [DBController::class, 'delete']);//->middleware('AdminLogin');
+
 
 
 });

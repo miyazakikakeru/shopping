@@ -24,11 +24,7 @@ class UserController extends Controller
         $request->session()->put('password',$request->password);
         return redirect('/home');
     }
-    public function InUser(Request $request){
-        $User = new User();
-        $User->fill($request->all())->save();
-        return redirect('/');
-    }
+
     public function Register(Request $request){
         if(count(User::where('mail_address',$request->session()->get('mail_address'))->where('password',$request->session()->get('password'))->get())>0){
             return redirect('/home');
