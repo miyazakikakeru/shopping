@@ -24,12 +24,13 @@ class DelAdminRequest extends FormRequest
     public function rules()
     {
         return [
-            'id'=>'exists:admin,id',
+            'id'=>'required|exists:admin,id',
         ];
     }
     public function messages(){
         return [
             'id.exists'=>'この管理者IDは既に使用されています',
+            'id.required'=>'管理者IDは必須項目です',
         ];
     }
 }
