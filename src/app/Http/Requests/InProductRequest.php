@@ -26,7 +26,7 @@ class InProductRequest extends FormRequest
         return [
             'id' => 'required|unique:admin,id',
             'name' => 'required',
-            'price' => 'numeric|required',
+            'price' => 'required|numeric',
             'explanation' => 'required',
             'gender' => 'required',
             'condition' => 'required',
@@ -38,8 +38,8 @@ class InProductRequest extends FormRequest
             'id.required'=>'IDは必須項目です',
             'id.unique'=>'このIDは既に使われています',
             'name.required'=>'名前は必須項目です',
-            'price.numeric'=>'価格は数値で入力してください',
             'price.required'=>'価格は必須項目です',
+            'price.numeric'=>'価格は数値で入力してください',
             'explanation.required'=>'商品説明は必須項目です',
             'gender.required'=>'性別はどちらか選択してください',
             'condition.required'=>'商品状態はどちらか選択してください',
