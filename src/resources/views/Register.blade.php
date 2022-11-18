@@ -18,6 +18,9 @@
 <body>
     <article class="container">
         <h1>会員登録</h1>
+        @foreach($errors->all() as $error)
+        <span class="text-danger">{{$error}}<br></span>
+        @endforeach
         <div class="row">
             <div class="col">
                 <form action="/InUser" method="post">

@@ -2,6 +2,9 @@
 @section('4','active')
 @section('content')
 <h2>管理者登録</h2>
+@foreach($errors->all() as $error)
+<span class="text-danger">{{$error}}<br></span>
+@endforeach
 <form action="adminInsert" method="post">
     @csrf
     <label>管理者ID　</label></br>

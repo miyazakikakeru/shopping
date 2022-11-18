@@ -2,6 +2,9 @@
 @section('2','active')
 @section('content')
     <h2>商品の登録</h2>
+    @foreach($errors->all() as $error)
+    <span class="text-danger">{{$error}}<br></span>
+    @endforeach
     <form action="in" method="post">
         @csrf
         <label>商品ID　</label></br>

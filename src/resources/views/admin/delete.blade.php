@@ -1,7 +1,10 @@
 @extends('admin.adminLayouts.layout')
 @section('3','active')
 @section('content')
-    <h2>商品の削除</h2>
+<h2>商品の削除</h2>
+@foreach($errors->all() as $error)
+<span class="text-danger">{{$error}}<br></span>
+@endforeach
     <form action="del" method="post">
         @csrf
         <label>商品ID</label></br>
