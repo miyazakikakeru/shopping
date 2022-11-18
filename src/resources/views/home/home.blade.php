@@ -20,7 +20,7 @@
         <h1>商品ホーム</h1>
         <div class="row">
             @foreach ($items as $item)
-                <div class="col-4">
+                <div class="col-4" style="padding:10px;">
                     <div class="card">
                         <form action="/home/detail" method="post">
                             @csrf
@@ -45,8 +45,8 @@
                 </div>
             @endforeach
         </div>
-        <form action="/target" method="post">
-            <div>
+        <div class="bg-info" style="padding:10px;">
+            <form action="/target" method="post">
                 @csrf
                 <div class="row">
                     <div class="input-group col-3">
@@ -86,8 +86,8 @@
                 <button type="submit" class="btn btn-primary">
                     絞る
                 </button>
-            </div>
-        </form>
+            </form>
+        </div>
 
     </article>
 </body>
