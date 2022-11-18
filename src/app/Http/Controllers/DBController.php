@@ -11,21 +11,21 @@ use Illuminate\Support\Facades\DB;
 
 class DBController extends Controller
 {
-    public function productInsert(Request $request){
+    public function InProduct(Request $request){
         $Product = new Product();
         $Product->fill($request->all())->save();
         return redirect('/admin/home');
     }
-    public function productDelete(Request $request){
+    public function DelProduct(Request $request){
         Product::where('name',$request->deleteName)->where('id',$request->deleteId)->delete();
         return redirect('/admin/home');
     }
-    public function insert(Request $request){
+    public function InAdmin(Request $request){
         $Admin = new Admin();
         $Admin->fill($request->all())->save();
         return redirect('/admin/home');
     }
-    public function delete(Request $request){
+    public function DelAdmin(Request $request){
         Admin::where('id',$request->id)->delete();
         return redirect('/admin/home');
     }

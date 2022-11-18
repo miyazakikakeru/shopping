@@ -18,13 +18,11 @@ class UserController extends Controller
         }
         return view('input');
     }
-
     public function check(Request $request){
         $request->session()->put('mail_address',$request->mail_address);
         $request->session()->put('password',$request->password);
         return redirect('/home');
     }
-
     public function Register(Request $request){
         if(count(User::where('mail_address',$request->session()->get('mail_address'))->where('password',$request->session()->get('password'))->get())>0){
             return redirect('/home');
@@ -35,7 +33,6 @@ class UserController extends Controller
         $items = Product::get();
         return view('home/home',['items'=>$items]);
     }
-
     public function target(Request $request){
         $items = Product::query();
         if(empty($request->man)||empty($request->girl)){
@@ -62,8 +59,7 @@ class UserController extends Controller
         }
         $items=$items->get();
         return view('home/home',['items'=>$items]);
-    }
-    
+    } 
     public function detail(Request $request){
         $inputs = $request->all();
         return view('home/detail',$inputs);

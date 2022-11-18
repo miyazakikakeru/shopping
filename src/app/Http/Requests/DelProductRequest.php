@@ -6,25 +6,19 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class DelProductRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
     public function authorize()
     {
         return false;
     }
-
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, mixed>
-     */
     public function rules()
     {
         return [
-            //
+            'deleteId'=>'exists:product,id',
+        ];
+    }
+    public function messages(){
+        return [
+            'id.exists'=>'この商品IDは既に使用されています',
         ];
     }
 }
