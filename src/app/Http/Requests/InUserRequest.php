@@ -13,7 +13,7 @@ class InUserRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,17 @@ class InUserRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'repuired',
+            'mail_address' => 'required|unique:users,mail_address',
+            'password' => 'repuired', 
+        ];
+    }
+    public function messages(){
+        return [
+            'name.required'=>'名前は必須項目です',
+            'mail_address.required'=>'メールアドレスは必須項目です',
+            'mail_address.unique'=>'このメールアドレスは既に使われています',
+            'password.required'=>'パスワードは必須項目です',
         ];
     }
 }

@@ -13,7 +13,7 @@ class InAdminRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,17 @@ class InAdminRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'id' => 'required|unique:admin,id',
+            'password' => 'repuired',
+            'name' => 'repuired',
+        ];
+    }
+    public function messages(){
+        return [
+            'id.required'=>'IDは必須項目です',
+            'id.unique'=>'このIDは既に使われています',
+            'password.required'=>'パスワードは必須項目です',
+            'name.required'=>'名前は必須項目です',
         ];
     }
 }
