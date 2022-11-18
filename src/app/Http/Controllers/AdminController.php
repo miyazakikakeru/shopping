@@ -8,6 +8,8 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\component;
+use App\Http\Requests\AdminLoginRequest;
+
 
 class AdminController extends Controller
 {
@@ -17,7 +19,7 @@ class AdminController extends Controller
         }
         return view('admin.adminlogin');
     }
-    public function check(Request $request){
+    public function check(AdminLoginRequest $request){
         $request->session()->put('id',$request->id);
         $request->session()->put('password',$request->password);
         return redirect('/admin/home');
