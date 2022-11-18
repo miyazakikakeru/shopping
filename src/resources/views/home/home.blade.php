@@ -36,7 +36,9 @@
                                 <p class="card-text">{{ $item->gender }}</p>
                                 <p class="card-text">{{ $item->condition }}</p>
                                 <p class="card-text">¥{{ $item->price }}</p>
-                                <button class="btn btn-primary">購入</button>
+                                <button class="btn btn-danger">購入</button>
+                            
+                                
                             </div>
                         </form>
                     </div>
