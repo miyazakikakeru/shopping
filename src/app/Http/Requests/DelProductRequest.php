@@ -8,17 +8,21 @@ class DelProductRequest extends FormRequest
 {
     public function authorize()
     {
-        return false;
+        return true;
     }
     public function rules()
     {
         return [
-            'deleteId'=>'exists:product,id',
+            'deleteId'=>'required|exists:product,id',
+            'deleteName'=>'required|exists:product,name',
+
         ];
     }
     public function messages(){
         return [
-            'id.exists'=>'この商品IDは既に使用されています',
+            'deleteid.exists' => 'この商品IDは既に使用されています',
+            'deleteId.required' => '必須項目です',
+            'deleteName.required|exists:product,name' => '商品名は必須項目です',
         ];
     }
 }

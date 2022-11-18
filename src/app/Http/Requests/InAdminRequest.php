@@ -25,8 +25,8 @@ class InAdminRequest extends FormRequest
     {
         return [
             'id' => 'required|unique:admin,id',
-            'password' => 'repuired',
-            'name' => 'repuired',
+            'password' => 'required',
+            'name' => 'required',
         ];
     }
     public function messages(){

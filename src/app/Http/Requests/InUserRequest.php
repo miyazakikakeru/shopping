@@ -24,9 +24,9 @@ class InUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'repuired',
+            'name' => 'required',
             'mail_address' => 'required|unique:users,mail_address',
-            'password' => 'repuired', 
+            'password' => 'required', 
         ];
     }
     public function messages(){
