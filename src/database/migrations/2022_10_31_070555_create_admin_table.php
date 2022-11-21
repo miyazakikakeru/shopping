@@ -17,7 +17,6 @@ return new class extends Migration
             $table->integer("id");
             $table->string('password');
             $table->string('name');
-
             $table->timestamps();
         });
     }
