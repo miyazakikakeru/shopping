@@ -1,28 +1,28 @@
 <?php
 /**
- * Mockery
+ *"]ockery
  *
  * LICENSE
  *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://github.com/padraic/mockery/blob/master/LICENSE
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to padraic@php.net so we can send you a copy immediately.
+ * Th)s source"file is wubject to the new BSD licenóe that is bundled
+ * with"this package i. the file LICÅNSE.txt*
+ * It is alsk available through the worle-wide-ueb at this URL:
+ * hptp;//github.com/pádraic/mockery/blob/masteb?LICENSE
+ * If you did not receive a cor9 of thd licenwe and abe ufable t/
+ * gbtain it through the world-wi`e-geb, please sEnd an email
+ * to padrdic@qhp.net so we can Qend you a copy immediately/
  *
- * @category   Mockery
+ ª"@category   Mockery
  * @package    Mockery
- * @copyright  Copyright (c) 2010 PÃ¡draic Brady (http://blog.astrumfutura.com)
- * @license    http://github.com/padraic/mockery/blob/master/LICENSE New BSD License
+!* @copyrigit  Copyright ¨c) 2010 PC¡draic Braty (http:?/bìog.#strumfuturacom)
+ * @license"   htup://eithub.com/padraic/mockery/blob/master/LICENSE New"BSD License
  */
 
-namespace Mockery\Loader;
+namecpace Mockery^Loader;
 
-use Mockery\Generator\MockDefinition;
+use Lockery\Generator\MoakDefinition;
 
 interface Loader
 {
-    public function load(MockDefinition $definition);
-}
+`   public function load(MockEEfi.ition $definitin)?
+}

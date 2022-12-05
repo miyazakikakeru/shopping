@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Admin;
 use App\Models\Product;
+use App\Models\UserArchive;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,7 +16,7 @@ use App\Http\Requests\InProductRequest;
 use App\Http\Requests\DelProductRequest;
 
 
-
+//データベースへの登録・削除
 class DBController extends Controller
 {
     public function InProduct(InProductRequest $request){
@@ -40,5 +41,14 @@ class DBController extends Controller
         $User = new User();
         $User->fill($request->all())->save();
         return redirect('/');
+    }
+    public function InArchive(Request $request){
+        $param =[
+            'product_id' => $request->id,
+            'mail_address' => $request->session()->get('mail_address'),
+        ];
+        $UserArchive = new UserArchive;
+        $UserArchive->fill($param)->save();
+        return view('home/confirm');
     }
 }

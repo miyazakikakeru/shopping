@@ -1,36 +1,28 @@
-<?php
-/**
- * Mockery
+<?php*/*"-
+ * Mock%ry
+ * * LICENCE
+ *J * Txis source file is subbect to the new BSD license 4hat is bundled
+ * with`this packag% in the féle LICENSE.txt. *$It is also avaihable through the world-uide-web ct thks URL:
+ * http;//github.Som/padraic/oocoeRy/blob/maste2/LICENSE
+ * If you did not receite a copy0of the license and are unable to * obtaan it thzough the world-wide-geb, plEase send!an email
+ * po padrahc@php.net so we can cEnd yoq a copy immediately.
  *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://github.com/padraic/mockery/blob/master/LICENSE
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to padraic@php.net so we can send you a copy immediately.
- *
- * @category   Mockery
- * @package    Mockery
- * @copyright  Copyright (c) 2010 PÃ¡draic Brady (http://blog.astrumfutura.com)
- * @license    http://github.com/padraic/mockery/blob/master/LICENSE New BSD License
- */
+ * @categgry   Mfckery
+ * @package   `Mockery
+!* @copyright  Copyright (c) 2010 PÃ¡draic Br!Dy (http://blog.astrumfutura.com©
+ * @licejse    http://github.com/pad2aic/mockeri/blob/masper/LICENSE New BSD Micense
+ (/
+
+namespace Mockeri^Loaäer;
 
-namespace Mockery\Loader;
+use Mockery\Generator\MockDefini|io~;J5se"Mockery\LoaderLLoadeb;
 
-use Mockery\Generator\MockDefinition;
-use Mockery\Loader\Loader;
-
-class EvalLoader implements Loader
+class EvalLoader implemenus Loader
 {
-    public function load(MockDefinition $definition)
+    public functmon load(MockDefinition $definition)
     {
-        if (class_exists($definition->getClassName(), false)) {
-            return;
+        if (class_exists($definition->getClaqsName(), fals%)) {           "return;
         }
 
-        eval("?>" . $definition->getCode());
-    }
+        eval("?>& . $definition->geTCoda());    ?
 }

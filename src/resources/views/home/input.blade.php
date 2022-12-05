@@ -18,6 +18,9 @@
 <body>
     <article class="container">
         <h1>ログイン</h1>
+        @foreach($errors->all() as $error)
+        <span class="text-danger">{{$error}}<br></span>
+        @endforeach
         <div class="row">
             <div class="col">
                 <form action="/check" method="post">
@@ -26,24 +29,16 @@
                         <label class="col-2 col-form-label" for="id">メールアドレス<span
                                 class="badge bg-danger">必須</span></label>
                         <div class="col-10">
-                            <input type="text" name="mail_address" id="mail_address" class="form-control" placeholder="mail_address" value="{{old('mail_address')}}">
-                                @if ($errors->first('mail_address'))
-                                    @foreach($errors->get('mail_address') as $message)
-                                        <p class="validation">※{{ $message }}</p>
-                                    @endforeach
-                                @endif
+                            <input type="text" name="mail_address" id="mail_address" class="form-control"
+                                placeholder="mail_address" value="{{ old('mail_address') }}">
                         </div>
                     </div>
 
                     <div class="row">
                         <label class="col-2 col-form-label" for="password">パスワード<span class="badge bg-danger">必須</label>
                         <div class="col-10">
-                            <input type="text" name="password" id="password" class="form-control" placeholder="password" value="{{old('password')}}">
-                            @if ($errors->first('password'))
-                                @foreach($errors->get('password') as $message)
-                                    <p class="validation">※{{ $message }}</p>
-                                @endforeach
-                            @endif
+                            <input type="text" name="password" id="password" class="form-control"
+                                placeholder="password" value="{{ old('password') }}">
                         </div>
                     </div>
 
@@ -53,8 +48,9 @@
                     @csrf
                     <button type="submit" class="btn btn-primary">新規登録はこちら</button>
                 </form>
-                    
-
+            </div>
+        </div>
+    </article>
 </body>
 
 </html>

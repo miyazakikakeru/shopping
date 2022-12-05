@@ -22,25 +22,20 @@
             @foreach ($items as $item)
                 <div class="col-4" style="padding:10px;">
                     <div class="card">
-                        <form action="/home/detail" method="post">
-                            @csrf
+                        
                             <div class="card-body">
-                                <input type="hidden" name="id" value="{{ $item->id }}">
-                                <input type="hidden" name="name" value="{{ $item->name }}">
-                                <input type="hidden" name="explanation" value="{{ $item->explanation }}">
-                                <input type="hidden" name="price" value="{{ $item->price }}">
-                                <input type="hidden" name="gender" value="{{ $item->gender }}">
-                                <input type="hidden" name="condition" value="{{ $item->condition }}">
                                 <h5 class="card-title">{{ $item->name }}</h5>
                                 <p class="card-text">{{ $item->explanation }}</p>
                                 <p class="card-text">{{ $item->gender }}</p>
                                 <p class="card-text">{{ $item->condition }}</p>
                                 <p class="card-text">¥{{ $item->price }}</p>
-                                <button class="btn btn-danger">購入</button>
-                            
-                                
+                                <form action="/home/detail" method="post">
+                                    @csrf
+                                    <input type="hidden" name="id" value="{{ $item->id }}">
+                                    <button class="btn btn-danger">購入</button>
+                                </form>
                             </div>
-                        </form>
+                        
                     </div>
                 </div>
             @endforeach

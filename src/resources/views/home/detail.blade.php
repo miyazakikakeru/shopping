@@ -12,43 +12,19 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Styles -->
-    <style>
-        h1 {
-            font-size: 40px;
-        }
-
-        h2 {
-            font-size: 50px;
-        }
-
-        .p1 {
-            font-size: 60px;
-        }
-
-        .p2 {
-            font-size: 60px;
-        }
-
-        .p3 {
-            font-size: 60px;
-        }
-
-        .p4 {
-            font-size: 60px;
-        }
-    </style>
 
 </head>
 
 <body>
     <h1>商品詳細ページ</h1>
-    <h2>{{ $name }}</h2>
-    <p class="p1">{{ $explanation }}</p>
-    <p class="p3">{{ $gender }}</p>
-    <p class="p4">{{ $condition }}</p>
-    <p class="p2">¥{{ $price }}</p>
+    <h2>{{ $inputs->name }}</h2>
+    <p class="p1">{{ $inputs->explanation }}</p>
+    <p class="p3">{{ $inputs->gender }}</p>
+    <p class="p4">{{ $inputs->condition }}</p>
+    <p class="p2">¥{{ $inputs->price }}</p>
     <form action="/home/confirm" method="post">
         @csrf
+        <input type="hidden" name='id' value='{{$inputs->id}}'>
         <button class="btn btn-danger">購入確定</button>
     </form>
     <form action="/home" method="post">

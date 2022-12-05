@@ -16,7 +16,7 @@ class UserController extends Controller
         if(count(User::where('mail_address',$request->session()->get('mail_address'))->where('password',$request->session()->get('password'))->get())>0){
             return redirect('/home');
         }
-        return view('input');
+        return view('home/input');
     }
     public function check(UserLoginRequest $request){
         $request->session()->put('mail_address',$request->mail_address);
@@ -27,7 +27,7 @@ class UserController extends Controller
         if(count(User::where('mail_address',$request->session()->get('mail_address'))->where('password',$request->session()->get('password'))->get())>0){
             return redirect('/home');
         }
-        return view('Register');
+        return view('home/Register');
     }
     public function home(Request $request){
         $items = Product::get();
@@ -61,11 +61,7 @@ class UserController extends Controller
         return view('home/home',['items'=>$items]);
     } 
     public function detail(Request $request){
-        $inputs = $request->all();
-        return view('home/detail',$inputs);
-    }
-    public function confirm(Request $request){
-        $inputs = $request->all();
-        return view('home/confirm',$inputs);
+        $inputs = Product::where('id',$request->get('id'))->first();
+        return view('home/detail',['inputs' => $inputs]);
     }
 }

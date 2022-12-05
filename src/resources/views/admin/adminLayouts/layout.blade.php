@@ -49,6 +49,11 @@
                     管理者の削除
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link @yield('6')" href="archiveView">
+                    全ユーザーの購入履歴
+                </a>
+            </li>
         </ul>
         @yield('content')
     </body>
