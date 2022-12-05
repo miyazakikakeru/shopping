@@ -11,7 +11,7 @@
         <tr>
             <th>{{$item->mail_address}}</th>
             <th>{{$item->product_id}}</th>
-            <th>{{date('Y/n/d/H/i/s',$item->timestamps)}}</th>
+            <th>{{date("Y年m月d日 H:i:s", strtotime($item->created_at))}}</th>
         </tr>
     </tbody>
 @endforeach
