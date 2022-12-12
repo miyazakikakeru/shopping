@@ -1,6 +1,12 @@
 @extends('admin.adminLayouts.layout')
 @section('1','active')
 @section('content')
+@php
+$products = App\Models\Product::all();
+$admins = App\Models\Admin::all();
+$Users = App\Models\User::all();
+@endphp
+
 <h2>登録商品一覧</h2>
     <table class="table">
         <thead>

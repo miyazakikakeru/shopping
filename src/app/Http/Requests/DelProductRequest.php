@@ -20,8 +20,9 @@ class DelProductRequest extends FormRequest
     }
     public function messages(){
         return [
-            'deleteid.exists' => 'この商品IDは既に使用されています',
+            'deleteId.exists' => 'この商品IDの商品は登録されていません',
             'deleteId.required' => '商品IDは必須項目です',
+            'deleteName.exists' => 'この商品名の商品は登録されていません',      
             'deleteName.required' => '商品名は必須項目です',
         ];
     }
