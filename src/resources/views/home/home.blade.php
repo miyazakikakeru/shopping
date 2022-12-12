@@ -26,7 +26,7 @@ $items = App\Models\Product::all();
             </div>
         @endforeach
     </div>
-    <div class="bg-info" style="padding:10px;">
+    <div class="rounded" style="padding:10px;background-color:#C0C0C0;">
         <form action="/target" method="post">
             @csrf
             <div class="row">
