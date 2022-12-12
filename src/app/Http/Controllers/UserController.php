@@ -18,10 +18,15 @@ class UserController extends Controller
         }
         return view('home/input');
     }
-    public function check(UserLoginRequest $request){
+    public function UserLogin(UserLoginRequest $request){
         $request->session()->put('mail_address',$request->mail_address);
         $request->session()->put('password',$request->password);
         return redirect('/home');
+    }
+    public function UserLogout(Request $request){
+        $request->session()->forget('mail_address');
+        $request->session()->forget('password');
+        return redirect('/');
     }
     public function Register(Request $request){
         if(count(User::where('mail_address',$request->session()->get('mail_address'))->where('password',$request->session()->get('password'))->get())>0){
@@ -30,8 +35,7 @@ class UserController extends Controller
         return view('home/Register');
     }
     public function home(Request $request){
-        $items = Product::get();
-        return view('home/home',['items'=>$items]);
+        return view('home/home');
     }
     public function target(Request $request){
         $items = Product::query();
@@ -63,5 +67,14 @@ class UserController extends Controller
     public function detail(Request $request){
         $inputs = Product::where('id',$request->get('id'))->first();
         return view('home/detail',['inputs' => $inputs]);
+    }
+    public function UserProfile(Request $request){
+        return view('home/UserProfile');
+    }
+    public function NewName(Request $request){
+        return view('home/NewName');
+    }
+    public function NewPassword(Request $request){
+        return view('home/NewPassword');
     }
 }

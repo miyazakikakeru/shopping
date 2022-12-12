@@ -8,9 +8,9 @@
     <form action="del" method="post">
         @csrf
         <label>商品ID</label></br>
-        <input type="text" name="deleteId"></br></br>
+        <input type="text" name="deleteId" value="{{old('deleteId')}}"></br></br>
         <label>商品名　</label></br>
-        <input type="text" name="deleteName"></br>
+        <input type="text" name="deleteName" value="{{old('deleteName')}}"></br>
         <input type="submit" value="商品削除">
     </form>
 @endsection

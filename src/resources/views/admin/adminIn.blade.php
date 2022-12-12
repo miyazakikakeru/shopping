@@ -8,11 +8,11 @@
 <form action="adminInsert" method="post">
     @csrf
     <label>管理者ID　</label></br>
-    <input type="text" name="id"></br>
+    <input type="text" name="id" value="{{old('id')}}"></br>
     <label>パスワード　</label></br>
     <input type="text" name="password"></br>
     <label>管理者名　</label></br>
-    <input type="text" name="name"></br>
+    <input type="text" name="name" value="{{old('name')}}"></br>
     <input type="submit" value="管理者を登録する">
 </form>
 @endsection

@@ -1,6 +1,9 @@
 @extends('admin.adminLayouts.layout')
 @section('6','active')
 @section('content')
+@php
+$UserArchive = App\Models\UserArchive::all();
+@endphp
 <h2>すべての購入履歴</h2>
 <table class="table">
     <thead>

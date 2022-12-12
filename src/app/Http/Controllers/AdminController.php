@@ -26,10 +26,7 @@ class AdminController extends Controller
         return redirect('/admin/home');
     }
     public function home(Request $request){
-        $products = Product::all();
-        $admins = Admin::all();
-        $Users = User::all();
-        return view('admin.adminhome',['products'=>$products,'admins'=>$admins,'Users'=>$Users]);
+        return view('admin.adminhome');
     }
     public function InProduct(Request $request){
         return view('admin.insert');
@@ -44,7 +41,6 @@ class AdminController extends Controller
         return view('admin.adminIn');
     }
     public function archiveView(Request $request){
-        $UserArchive = UserArchive::all();
-        return view('admin.archive',['UserArchive'=>$UserArchive]);
+        return view('admin.archive');
     }
 }

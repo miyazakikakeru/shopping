@@ -15,24 +15,19 @@ class InAdminRequest extends FormRequest
     {
         return true;
     }
-
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, mixed>
-     */
     public function rules()
     {
         return [
-            'id' => 'required|unique:admin,id',
+            'id' => 'required|numeric|unique:admin,id',
             'password' => 'required',
             'name' => 'required',
         ];
     }
     public function messages(){
         return [
-            'id.required'=>'IDは必須項目です',
-            'id.unique'=>'このIDは既に使われています',
+            'id.required'=>'管理者IDは必須項目です',
+            'id.numeric'=>'管理者IDは半角数字で入力してください',
+            'id.unique'=>'この管理者IDは既に使われています',
             'password.required'=>'パスワードは必須項目です',
             'name.required'=>'名前は必須項目です',
         ];

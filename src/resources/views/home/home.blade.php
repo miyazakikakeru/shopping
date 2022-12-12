@@ -1,12 +1,14 @@
 @extends('home.userLayouts.layout')
 @section('content')
+@php
+$items = App\Models\Product::all();
+@endphp
 <article class="container">
     <h1>商品ホーム</h1>
     <div class="row">
         @foreach ($items as $item)
             <div class="col-4" style="padding:10px;">
-                <div class="card">
-                    
+                <div class="card">   
                         <div class="card-body">
                             <h5 class="card-title">{{ $item->name }}</h5>
                             <p class="card-text">{{ $item->explanation }}</p>

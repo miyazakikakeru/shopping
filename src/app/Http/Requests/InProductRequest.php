@@ -24,7 +24,7 @@ class InProductRequest extends FormRequest
     public function rules()
     {
         return [
-            'id' => 'required|unique:admin,id',
+            'id' => 'required|unique:product,id',
             'name' => 'required',
             'price' => 'required|numeric',
             'explanation' => 'required',
