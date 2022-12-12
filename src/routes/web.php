@@ -22,7 +22,10 @@ Route::get('/UserProfile/NewPassword', [UserController::class, 'NewPassword'])->
 
 //DBController
 Route::post('/InUser', [DBController::class, 'InUser']);
+Route::post('/DelUser', [DBController::class, 'DelUser'])->middleware('UserLogin');
 Route::post('/home/confirm', [DBController::class, 'InArchive'])->middleware('UserLogin');
+
+
 
 
 

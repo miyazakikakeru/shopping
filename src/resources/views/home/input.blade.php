@@ -17,6 +17,9 @@
 
 <body>
     <article class="container">
+        @if(!empty(Session::get('ms')))
+        <h2 class="text-success">※{{Session::get('ms')}}※※</h2>
+        @endif
         <h1>ログイン</h1>
         @foreach($errors->all() as $error)
         <span class="text-danger">{{$error}}<br></span>

@@ -14,7 +14,7 @@
 @php
 $User = App\Models\User::where('mail_address',Session::get('mail_address'))->first();
 @endphp
-<header style="padding:15px 100px;">
+<header style="padding:15px 100px; background-color:#FFFAF0;">
 <div style="text-align:right;">
     <form action="/UserProfile" method="post">
         @csrf

@@ -42,6 +42,10 @@ class DBController extends Controller
         $User->fill($request->all())->save();
         return redirect('/');
     }
+    public function DelUser(DelAdminRequest $request){
+        User::where('mail_address',$request->mail_address)->delete();
+        return redirect('/');
+    }
     public function InArchive(Request $request){
         $param =[
             'product_id' => $request->id,

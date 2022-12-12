@@ -15,7 +15,9 @@ $User = App\Models\User::where('mail_address',Session::get('mail_address'))->fir
     パスワード　　:{{$User->password}}
     <a href="/UserProfile/NewPassword"class="btn btn-primary">パスワードの変更</a>
 </h4>
-<form action="post">
+<form action="/DelUser" method="post">
+    @csrf
+    <input type="hidden" value="{{$User->mail_address}}">
     <button type="submit" class="btn btn-danger">ユーザーアカウントを削除する</button>
 </form>
 

@@ -26,7 +26,7 @@ class UserController extends Controller
     public function UserLogout(Request $request){
         $request->session()->forget('mail_address');
         $request->session()->forget('password');
-        return redirect('/');
+        return redirect('/')->with(['ms'=>'ログアウトが完了しました']);
     }
     public function Register(Request $request){
         if(count(User::where('mail_address',$request->session()->get('mail_address'))->where('password',$request->session()->get('password'))->get())>0){
