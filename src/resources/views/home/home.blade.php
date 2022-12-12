@@ -3,7 +3,7 @@
 @php
 $items = App\Models\Product::all();
 @endphp
-<article class="container">
+<article class="container" style="backgound-color:#F0FFF0;">
     <h1>商品ホーム</h1>
     <div class="row">
         @foreach ($items as $item)

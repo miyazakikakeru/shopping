@@ -34,7 +34,5 @@ $User = App\Models\User::where('mail_address',Session::get('mail_address'))->fir
     </form>
 </div>
 </header>
-<main style="backgound-color:#F0FFF0;">
 @yield('content')
-</main>
 </body>
