@@ -18,4 +18,5 @@ $User = App\Models\User::where('mail_address',Session::get('mail_address'))->fir
 <form action="post">
     <button type="submit" class="btn btn-danger">ユーザーアカウントを削除する</button>
 </form>
+
 @endsection
