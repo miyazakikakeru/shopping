@@ -15,8 +15,11 @@
 
 </head>
 
-<body>
+<body style="padding:15px 100px; background-color:#FFFAF0;">
     <article class="container">
+        @if(!empty(Session::get('success')))
+        <h2 class="text-success">※{{Session::get('success')}}</h2>
+        @endif
         <h1>ログイン</h1>
         @foreach($errors->all() as $error)
         <span class="text-danger">{{$error}}<br></span>
@@ -33,7 +36,6 @@
                                 placeholder="mail_address" value="{{ old('mail_address') }}">
                         </div>
                     </div>
-
                     <div class="row">
                         <label class="col-2 col-form-label" for="password">パスワード<span class="badge bg-danger">必須</label>
                         <div class="col-10">
@@ -41,12 +43,11 @@
                                 placeholder="password" value="{{ old('password') }}">
                         </div>
                     </div>
-
-                    <button type="submit" class="btn btn-primary">ログイン</button>
+                    <button type="submit" class="btn btn-success">ログイン</button>
                 </form>
                 <form action="/register" method="post">
                     @csrf
-                    <button type="submit" class="btn btn-primary">新規登録はこちら</button>
+                    <button type="submit" class="btn btn-dark">新規登録はこちら</button>
                 </form>
             </div>
         </div>

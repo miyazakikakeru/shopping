@@ -8,17 +8,14 @@ use App\Models\Admin;
 
 class AdminLogin
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
-     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
-     */
     public function handle(Request $request, Closure $next)
     {
-        if(count(Admin::where('id',$request->session()->get('id'))->where('password',$request->session()->get('password'))->get())<=0){
-                return redirect('/admin');
+        $Admin = Admin::where('id',$request->session()->get('id'))->first();
+        if(empty($Admin)){
+                return redirect('/admin')->withErrors('IDが登録されていません');
+        }
+        if($Admin->password!=$request->session()->get('password')){
+            return redirect('/admin')->withErrors('パスワードが一致しません');
         }
         return $next($request);
     }

@@ -40,6 +40,10 @@ class DBController extends Controller
     public function InUser(InUserRequest $request){
         $User = new User();
         $User->fill($request->all())->save();
+        return redirect('/')->with('success','登録が完了しました');
+    }
+    public function DelUser(DelAdminRequest $request){
+        User::where('mail_address',$request->mail_address)->delete();
         return redirect('/');
     }
     public function InArchive(Request $request){

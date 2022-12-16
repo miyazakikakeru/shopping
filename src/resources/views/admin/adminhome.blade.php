@@ -6,6 +6,9 @@ $products = App\Models\Product::all();
 $admins = App\Models\Admin::all();
 $Users = App\Models\User::all();
 @endphp
+@if(!empty(Session::get('success')))
+    <h2 class="text-success">※{{Session::get('success')}}</h2>
+@endif
 
 <h2>登録商品一覧</h2>
     <table class="table">

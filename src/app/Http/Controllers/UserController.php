@@ -13,7 +13,10 @@ use App\Http\Requests\UserLoginRequest;
 class UserController extends Controller
 {
     public function index(Request $request){
-        if(count(User::where('mail_address',$request->session()->get('mail_address'))->where('password',$request->session()->get('password'))->get())>0){
+        $User = User::where('mail_address',$request->session()->get('mail_address'))
+        ->where('password',$request->session()->get('password'))
+        ->first();
+        if(!empty($User)){
             return redirect('/home');
         }
         return view('home/input');
@@ -21,12 +24,12 @@ class UserController extends Controller
     public function UserLogin(UserLoginRequest $request){
         $request->session()->put('mail_address',$request->mail_address);
         $request->session()->put('password',$request->password);
-        return redirect('/home');
+        return redirect('/home')->with('success','ログインが完了しました');
     }
     public function UserLogout(Request $request){
         $request->session()->forget('mail_address');
         $request->session()->forget('password');
-        return redirect('/');
+        return redirect('/')->with('success','ログアウトが完了しました');
     }
     public function Register(Request $request){
         if(count(User::where('mail_address',$request->session()->get('mail_address'))->where('password',$request->session()->get('password'))->get())>0){
@@ -35,7 +38,8 @@ class UserController extends Controller
         return view('home/Register');
     }
     public function home(Request $request){
-        return view('home/home');
+        $items = Product::all();
+        return view('home/home',['items'=>$items]);
     }
     public function target(Request $request){
         $items = Product::query();
