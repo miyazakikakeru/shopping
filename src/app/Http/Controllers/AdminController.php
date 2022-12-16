@@ -15,7 +15,10 @@ use App\Http\Requests\AdminLoginRequest;
 class AdminController extends Controller
 {
     public function login(Request $request){
-        if(!empty(Admin::where('id',$request->session()->get('id'))->first())){
+        $Admin = Admin::where('id',$request->session()->get('id'))
+        ->where('password',$request->session()->get('password'))
+        ->first();
+        if(!empty($Admin)){
             return redirect('/admin/home');
         }
         return view('admin.adminlogin');
@@ -23,7 +26,7 @@ class AdminController extends Controller
     public function check(AdminLoginRequest $request){
         $request->session()->put('id',$request->id);
         $request->session()->put('password',$request->password);
-        return redirect('/admin/home');
+        return redirect('/admin/home')->with('success','ログインが完了しました');
     }
     public function home(Request $request){
         return view('admin.adminhome');

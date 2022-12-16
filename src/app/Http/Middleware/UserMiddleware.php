@@ -8,17 +8,17 @@ use Illuminate\Http\Request;
 
 class UserMiddleware
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
-     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
-     */
     public function handle(Request $request, Closure $next)
     {
-        if(count(User::where('mail_address',$request->session()->get('mail_address'))->where('password',$request->session()->get('password'))->get())<=0){
-            return redirect('/');
+        if(empty($request->session()->get('mail_address'))){
+            return redirect('/')->withErrors('ログインしてください');
+        }
+        $User=User::where('mail_address',$request->session()->get('mail_address'))->first();
+        if(empty($User)){
+            return redirect('/')->withErrors('このメールアドレスは登録されていません');
+        }
+        if($User->password!=$request->session()->get('password')){
+            return redirect('/')->withErrors('パスワードが一致しません');
         }
         return $next($request);
     }
