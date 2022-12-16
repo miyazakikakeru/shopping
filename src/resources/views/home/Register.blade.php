@@ -47,8 +47,9 @@
                                 placeholder="password">
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-dark">登録</button>
+                    <button type="submit" class="btn btn-success">登録</button>
                 </form>
+                <a href="/" class="btn btn-dark">◀︎ 戻る</a>
             </div>
         </div>
     </article>
