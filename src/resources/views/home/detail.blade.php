@@ -12,6 +12,6 @@
     </form>
     <form action="/home" method="post">
         @csrf
-        <button class="btn btn-primary">戻る</button>
+        <button class="btn btn-dark">◀︎ホームに戻る</button>
     </form>
 @endsection

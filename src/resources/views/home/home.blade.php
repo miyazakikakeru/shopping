@@ -1,32 +1,31 @@
 @extends('home.userLayouts.layout')
 @section('content')
-@php
-$items = App\Models\Product::all();
-@endphp
-<article class="container">
-    <h1>商品ホーム</h1>
+<style>
+    .target{padding:10px;background-color:#C0C0C0;}
+</style>
+<main class="container">
+    <h1>商品一覧</h1>
     <div class="row">
         @foreach ($items as $item)
-            <div class="col-4" style="padding:10px;">
+            <div class="col-4 p-2">
                 <div class="card">   
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $item->name }}</h5>
-                            <p class="card-text">{{ $item->explanation }}</p>
-                            <p class="card-text">{{ $item->gender }}</p>
-                            <p class="card-text">{{ $item->condition }}</p>
-                            <p class="card-text">¥{{ $item->price }}</p>
-                            <form action="/home/detail" method="post">
-                                @csrf
-                                <input type="hidden" name="id" value="{{ $item->id }}">
-                                <button class="btn btn-danger">購入</button>
-                            </form>
-                        </div>
-                    
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $item->name }}</h5>
+                        <p class="card-text">{{ $item->explanation }}</p>
+                        <p class="card-text">{{ $item->gender }}</p>
+                        <p class="card-text">{{ $item->condition }}</p>
+                        <p class="card-text">¥{{ $item->price }}</p>
+                        <form action="/home/detail" method="post">
+                            @csrf
+                            <input type="hidden" name="id" value="{{ $item->id }}">
+                            <button class="btn btn-dark">購入</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         @endforeach
     </div>
-    <div class="rounded" style="padding:10px;background-color:#C0C0C0;">
+    <div class="rounded target mt-2">
         <form action="/target" method="post">
             @csrf
             <div class="row">
@@ -64,10 +63,10 @@ $items = App\Models\Product::all();
                     <label class="form-check-label" for="btncheck4">中古品</label>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btn btn-dark">
                 絞る
             </button>
         </form>
     </div>
-</article>
+</main>
 @endsection
