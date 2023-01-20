@@ -22,7 +22,6 @@ Route::post('/UserProfile/NewName', [UserController::class, 'NewName_Update'])->
 Route::get('/UserProfile/NewPassword', [UserController::class, 'NewPassword'])->middleware('UserLogin');
 Route::post('/UserProfile/NewPassword', [UserController::class, 'NewPassword_Update'])->middleware('UserLogin');
 
-
 //DBController
 Route::post('/InUser', [DBController::class, 'InUser']);
 Route::post('delUser', [DBController::class, 'DelUser']);
