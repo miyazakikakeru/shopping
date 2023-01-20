@@ -15,9 +15,7 @@
             padding:100px 100px; 
             background-color:#FFFAF0;
         }
-        h1{
-            margin-bottom:60px;
-        }
+        h1{margin-bottom:60px;}
     </style>
 </head>
 <body>
@@ -52,6 +50,7 @@
             </div>
             <button type="submit" class="btn btn-dark">登録</button>
         </form>
+        <a href="/" class="btn btn-danger">戻る</a>
 </article>
 </body>
 </html>

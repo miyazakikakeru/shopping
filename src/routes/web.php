@@ -17,7 +17,11 @@ Route::post('/home/detail', [UserController::class, 'detail'])->middleware('User
 Route::post('/target', [UserController::class, 'target'])->middleware('UserLogin');
 Route::post('/UserProfile', [UserController::class, 'UserProfile'])->middleware('UserLogin');
 Route::get('/UserProfile/NewName', [UserController::class, 'NewName'])->middleware('UserLogin');
+Route::post('/UserProfile/NewName', [UserController::class, 'NewName_Update'])->middleware('UserLogin');
+
 Route::get('/UserProfile/NewPassword', [UserController::class, 'NewPassword'])->middleware('UserLogin');
+Route::post('/UserProfile/NewPassword', [UserController::class, 'NewPassword_Update'])->middleware('UserLogin');
+
 
 //DBController
 Route::post('/InUser', [DBController::class, 'InUser']);
