@@ -17,7 +17,6 @@ $User = App\Models\User::where('mail_address',Session::get('mail_address'))->fir
 </h4>
 <form action="/delUser" method="post">
     @csrf
-
     <button type="submit" class="btn btn-danger">ユーザーアカウントを削除する</button>
 </form>
 @endsection

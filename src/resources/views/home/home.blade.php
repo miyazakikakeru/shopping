@@ -30,22 +30,22 @@
             @csrf
             <div class="row">
                 <div class="input-group col-3">
-                    <input type="text" class="form-control" name="moneyMin" placeholder="最小金額" aria-label="最小金額">
+                    <input type="text" class="form-control" name="moneyMin" placeholder="最小金額" aria-label="最小金額" value="{{ $request['moneyMin'] }}">
                     <span class="input-group-text">~</span>
-                    <input type="text" class="form-control" name="moneyMax" placeholder="最大金額" aria-label="最大金額">
+                    <input type="text" class="form-control" name="moneyMax" placeholder="最大金額" aria-label="最大金額" value="{{ $request['moneyMax'] }}">
                 </div>
             </div>
             <div class="row">
                 <div class="col-1" class="form-check" role="group"
                     aria-label="Basic checkbox toggle button group">
                     <input type="checkbox" class="form-check-input" name="man" value="男" id="btncheck1"
-                        autocomplete="off">
+                        autocomplete="off" @checked($request['man'])>
                     <label class="form-check-label" for="btncheck1">男</label>
                 </div>
                 <div class="col-1" class="form-check" role="group"
                     aria-label="Basic checkbox toggle button group">
-                    <input type="checkbox" class="form-check-input" name="girl" value="女" id="btncheck2"
-                        autocomplete="off">
+                    <input type="checkbox" class="form-check-input" name="girl" value="女" id="btncheck2" 
+                    autocomplete="off" @checked($request['girl']) >
                     <label class="form-check-label" for="btncheck2">女</label>
                 </div>
             </div>
@@ -53,13 +53,13 @@
                 <div class="col-1" class="form-check" role="group"
                     aria-label="Basic checkbox toggle button group">
                     <input type="checkbox" class="form-check-input" name="new" value="新品" id="btncheck3"
-                        autocomplete="off">
+                        autocomplete="off" @checked($request['new'])>
                     <label class="form-check-label" for="btncheck3">新品</label>
                 </div>
                 <div class="col-1" class="form-check" role="group"
                     aria-label="Basic checkbox toggle button group">
                     <input type="checkbox" class="form-check-input" name="old" value="中古品"
-                        id="btncheck4" autocomplete="off">
+                        id="btncheck4" autocomplete="off" @checked($request['old'])>
                     <label class="form-check-label" for="btncheck4">中古品</label>
                 </div>
             </div>

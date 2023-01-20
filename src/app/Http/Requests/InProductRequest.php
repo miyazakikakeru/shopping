@@ -24,7 +24,7 @@ class InProductRequest extends FormRequest
     public function rules()
     {
         return [
-            'id' => 'required|unique:product,id',
+            'id' => 'required|numeric|unique:product,id',
             'name' => 'required',
             'price' => 'required|numeric',
             'explanation' => 'required',
@@ -36,6 +36,7 @@ class InProductRequest extends FormRequest
         return [
             
             'id.required'=>'IDは必須項目です',
+            'id.numeric'=>'IDは半角数字で入力してください',
             'id.unique'=>'このIDは既に使われています',
             'name.required'=>'名前は必須項目です',
             'price.required'=>'価格は必須項目です',
