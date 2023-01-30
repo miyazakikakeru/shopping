@@ -18,43 +18,43 @@ class productTableSeeder extends Seeder
     {
         Product::create([
             'id' => '1',
-            'name' => '商品欄',
-            'explanation' => '説明欄',
+            'name' => 'スカーフ',
+            'explanation' => '手編みの物です',
             'price' => '1000',
-            'gender' => '男',
-            'condition' => '中古品', 
+            'gender' => '女',
+            'condition' => '新品', 
         ]);
         Product::create([
             'id' => '2',
-            'name' => 'ショッピング',
-            'explanation' => '説明書',
-            'price' => '2000',
+            'name' => 'ダウン',
+            'explanation' => '	冬の寒さに対抗',
+            'price' => '7000',
             'gender' => '男',
             'condition' => '新品', 
         ]);
         Product::create([
             'id' => '3',
-            'name' => '家電',
-            'explanation' => 'わいやで',
-            'price' => '3000',
+            'name' => 'スカート',
+            'explanation' => '	可愛らしく着飾れます',
+            'price' => '4000',
             'gender' => '女',
             'condition' => '中古品', 
         ]);
         Product::create([
             'id' => '4',
-            'name' => '商品',
-            'explanation' => 'バスケ',
-            'price' => '4000',
+            'name' => '靴',
+            'explanation' => '革靴',
+            'price' => '7000',
             'gender' => '男',
-            'condition' => '新品', 
+            'condition' => '中古品', 
         ]);
         Product::create([
             'id' => '5',
-            'name' => '企業',
-            'explanation' => '社長',
-            'price' => '5000',
+            'name' => 'バッグ',
+            'explanation' => '高級なバッグです',
+            'price' => '25000',
             'gender' => '女',
-            'condition' => '中古品', 
+            'condition' => '新品', 
         ]);
     }
 }
