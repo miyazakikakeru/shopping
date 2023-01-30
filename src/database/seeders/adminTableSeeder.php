@@ -17,9 +17,9 @@ class adminTableSeeder extends Seeder
     public function run()
     {
         Admin::create([
-            'id' => '1234',
+            'id' => '1003',
             'password' => 'password',
-            'name' => '管理者太郎',
+            'name' => '宮崎',
         ]);
     }
 }

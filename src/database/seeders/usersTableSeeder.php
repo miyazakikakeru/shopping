@@ -16,9 +16,9 @@ class usersTableSeeder extends Seeder
     public function run()
     {
         User::create([
-            'mail_address' => 'user@user',
+            'mail_address' => 'test_user@exmaple.com',
             'password' => 'password',
-            'name' => '会員太郎'
+            'name' => '宮崎',
         ]);
     }
 }
