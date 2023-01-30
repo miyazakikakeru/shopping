@@ -1,6 +1,6 @@
 # Shopping サイト
 
-ログイン機能・商品絞り込みを学びたくて、ショッピングサイトを作りました。
+ログイン機能・商品絞り込みを学びたく、ショッピングサイトを制作しました。
 
 ---
 ## 実施可能な機能
@@ -20,7 +20,27 @@ docker compose up -d を入力
 - PHP 8.1.0
 - MySQL
 - Redis
-が起動しているか確認してください。
+
+が起動しているか確認して下さい。
+### 初期データ投入方法
+~~~sh
+docker compose exec php-fpm php artisan migrate
+~~~
+- create_users_table
+- create_admin_table
+- create_product_table
+- create_user_archive
+
+が起動しているか確認して下さい。
+
+~~~sh
+docker compose exec php-fpm php artisan db:seed 
+~~~
+- adminTableSeeder
+- usersTableSeeder
+- productTableSeeder
+
+が起動しているか確認して下さい。
 
 ### ログイン方法
 
@@ -37,5 +57,7 @@ docker compose up -d を入力
 パスワード: password
 ```
 
-## 制作日数
-２ヶ月程度
+## 制作期間
+- 制作期間：2ヶ月程度
+- 作成人数：2人
+
