@@ -59,5 +59,5 @@ docker compose exec php-fpm php artisan db:seed
 
 ## 制作期間
 - 制作期間：２ヶ月程度
-- 作成人数：２人
+- 作成人数：2人
 
